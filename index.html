@@ -1,478 +1,2568 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ark Bioenergies | 60 KLPD Greenfield Ethanol Project</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Chart.js for Financial Data -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ark Bioenergies | 60 KLPD Greenfield Ethanol Plant — Bellary, Karnataka</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C8901A;
+  --gold-light: #E8A82A;
+  --gold-pale: #F5E6C8;
+  --green: #2A6B3C;
+  --green-light: #3D9B58;
+  --green-pale: #E4F2E8;
+  --coal: #0E0E0F;
+  --charcoal: #1A1A1C;
+  --slate: #252528;
+  --slate-mid: #333337;
+  --muted: #8C8C94;
+  --text: #F0EDE8;
+  --text-dim: #B8B4AC;
+  --white: #FAFAF8;
+  --ff-display: 'Bebas Neue', 'Impact', sans-serif;
+  --ff-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ff-serif: 'Cormorant Garamond', Georgia, serif;
+}
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+html { scroll-behavior: smooth; }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            green: '#2E7D32',
-                            dark: '#1B5E20',
-                            light: '#E8F5E9',
-                            accent: '#FFD700'
-                        },
-                        slate: {
-                            800: '#1e293b',
-                            900: '#0f172a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Oswald', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+body {
+  background: var(--coal);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #2E7D32, #43A047);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+/* ─── NAV ──────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 72px;
+  background: rgba(14,14,15,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200,144,26,0.15);
+  transition: all 0.3s;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo .leaf-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--green), var(--gold));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nav-logo span {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+.nav-logo span em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold-light); }
+
+.nav-cta {
+  padding: 10px 24px;
+  background: var(--gold);
+  color: var(--coal) !important;
+  border-radius: 6px;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold-light) !important;
+  color: var(--coal) !important;
+  transform: translateY(-1px);
+}
+
+/* ─── HERO ──────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 6vw 8vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(170deg, rgba(14,14,15,0.05) 0%, rgba(14,14,15,0.92) 70%),
+    radial-gradient(ellipse at 70% 30%, rgba(42,107,60,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(200,144,26,0.12) 0%, transparent 50%),
+    url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1600&q=80') center/cover no-repeat;
+  z-index: 0;
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid rgba(200,144,26,0.5);
+  border-radius: 100px;
+  background: rgba(200,144,26,0.08);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--gold-light);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(4rem, 9vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  animation: fadeUp 0.9s 0.1s ease both;
+  text-transform: uppercase;
+}
+
+.hero h1 .accent { color: var(--gold-light); }
+.hero h1 .stroke {
+  -webkit-text-stroke: 2px var(--white);
+  color: transparent;
+}
+
+.hero-sub {
+  margin-top: 28px;
+  font-family: var(--ff-serif);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: var(--text-dim);
+  max-width: 600px;
+  line-height: 1.55;
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-metrics {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  animation: fadeUp 1.1s 0.3s ease both;
+}
+
+.hero-metric-val {
+  font-family: var(--ff-display);
+  font-size: 2.6rem;
+  letter-spacing: 0.02em;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.hero-metric-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  animation: fadeUp 1.2s 0.4s ease both;
+}
+
+.btn-primary {
+  padding: 16px 36px;
+  background: var(--gold);
+  color: var(--coal);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.25s;
+  border: 2px solid transparent;
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200,144,26,0.35);
+}
+
+.btn-outline {
+  padding: 16px 36px;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: all 0.25s;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SECTIONS ──────────────────────────────── */
+section { padding: 100px 6vw; }
+
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--white);
+}
+
+.section-sub {
+  font-family: var(--ff-serif);
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  max-width: 560px;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 20px 0 40px;
+}
+
+/* ─── TICKER BANNER ─────────────────────────── */
+.ticker-wrap {
+  background: var(--gold);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+  gap: 0;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 40px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coal);
+}
+
+.ticker-sep {
+  color: rgba(0,0,0,0.3);
+  font-size: 1rem;
+}
+
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ─── STATS STRIP ───────────────────────────── */
+.stats-strip {
+  background: var(--charcoal);
+  padding: 60px 6vw;
+  border-top: 1px solid rgba(200,144,26,0.15);
+  border-bottom: 1px solid rgba(200,144,26,0.15);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 30px 20px;
+  border: 1px solid rgba(200,144,26,0.12);
+  border-radius: 12px;
+  background: rgba(200,144,26,0.04);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.stat-item:hover::before { transform: scaleX(1); }
+.stat-item:hover { border-color: rgba(200,144,26,0.4); background: rgba(200,144,26,0.07); }
+
+.stat-val {
+  font-family: var(--ff-display);
+  font-size: 3rem;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ─── ABOUT / VISION ───────────────────────── */
+.vision-section {
+  background: var(--coal);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) { .vision-section { grid-template-columns: 1fr; gap: 40px; } }
+
+.vision-text p {
+  color: var(--text-dim);
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 20px;
+}
+
+.vision-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(200,144,26,0.12);
+  background: rgba(200,144,26,0.03);
+  transition: all 0.3s;
+}
+
+.feature-row:hover {
+  border-color: rgba(200,144,26,0.3);
+  background: rgba(200,144,26,0.06);
+  transform: translateX(6px);
+}
+
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--gold), var(--green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.feature-title { font-weight: 700; font-size: 0.92rem; color: var(--white); }
+.feature-desc { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+.policy-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.policy-card {
+  background: var(--slate);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(200,144,26,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.policy-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), var(--green));
+}
+
+.policy-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+
+.policy-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(42,107,60,0.25);
+  border: 1px solid rgba(42,107,60,0.4);
+  color: #6FCF97;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.policy-items { display: flex; flex-direction: column; gap: 6px; }
+.policy-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: var(--text-dim);
+}
+
+.policy-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ─── LOCATION ──────────────────────────────── */
+.location-section {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(200,144,26,0.12);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+@media (max-width: 900px) { .location-grid { grid-template-columns: 1fr; } }
+
+.map-container {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(200,144,26,0.2);
+  background: var(--slate);
+  position: relative;
+}
+
+.map-svg-wrapper {
+  width: 100%;
+  aspect-ratio: 1.2;
+  background: linear-gradient(145deg, #1A2420, #0E1A14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.location-advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.adv-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 14px;
+  background: var(--slate);
+  border: 1px solid rgba(200,144,26,0.1);
+  transition: all 0.3s;
+}
+
+.adv-card:hover {
+  border-color: rgba(200,144,26,0.35);
+  background: rgba(200,144,26,0.05);
+}
+
+.adv-num {
+  font-family: var(--ff-display);
+  font-size: 3rem;
+  color: rgba(200,144,26,0.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 50px;
+  transition: color 0.3s;
+}
+
+.adv-card:hover .adv-num { color: var(--gold); }
+.adv-title { font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 6px; }
+.adv-desc { font-size: 0.83rem; color: var(--text-dim); line-height: 1.6; }
+
+.distance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(200,144,26,0.12);
+  border: 1px solid rgba(200,144,26,0.3);
+  color: var(--gold-light);
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ─── PROCESS DIAGRAM ───────────────────────── */
+.process-section {
+  background: var(--coal);
+}
+
+.process-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--slate);
+  border-radius: 12px;
+  padding: 6px;
+  width: fit-content;
+  margin: 40px 0 50px;
+  border: 1px solid rgba(200,144,26,0.1);
+}
+
+.process-tab {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.process-tab.active {
+  background: var(--gold);
+  color: var(--coal);
+}
+
+.diagram-panel { display: none; }
+.diagram-panel.active { display: block; }
+
+.diagram-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  background: linear-gradient(145deg, var(--charcoal), var(--slate));
+  border: 1px solid rgba(200,144,26,0.15);
+  padding: 40px 30px;
+}
+
+/* ─── PROCESS STEPS (mobile) ─────────────────── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.step-card {
+  background: var(--slate);
+  border-radius: 16px;
+  padding: 28px 22px;
+  border: 1px solid rgba(200,144,26,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.step-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.step-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,144,26,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.step-card:hover::after { opacity: 1; }
+
+.step-num {
+  font-family: var(--ff-display);
+  font-size: 4rem;
+  color: rgba(200,144,26,0.12);
+  line-height: 1;
+  position: absolute;
+  top: 10px; right: 16px;
+  transition: color 0.3s;
+}
+
+.step-card:hover .step-num { color: rgba(200,144,26,0.25); }
+
+.step-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--white);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-detail {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.step-param {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(200,144,26,0.1);
+  border: 1px solid rgba(200,144,26,0.25);
+  color: var(--gold-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── FEEDSTOCK TABLE ───────────────────────── */
+.feedstock-section {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(200,144,26,0.12);
+}
+
+.feedstock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.feedstock-card {
+  background: var(--slate);
+  border-radius: 18px;
+  padding: 30px 24px;
+  border: 1px solid rgba(200,144,26,0.1);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedstock-card.primary {
+  border-color: rgba(200,144,26,0.35);
+  background: linear-gradient(145deg, rgba(200,144,26,0.08), var(--slate));
+}
+
+.feedstock-card.primary::before {
+  content: 'PRIMARY';
+  position: absolute;
+  top: 16px; right: 16px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  background: rgba(200,144,26,0.12);
+  border: 1px solid rgba(200,144,26,0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.feedstock-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+}
+
+.feedstock-emoji { font-size: 2.4rem; margin-bottom: 16px; }
+
+.feedstock-name {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.feedstock-source {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.feedstock-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fstat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.8rem;
+}
+
+.fstat-label { color: var(--muted); }
+.fstat-val { color: var(--gold-light); font-weight: 700; }
+
+/* ─── PRODUCTS SECTION ──────────────────────── */
+.products-section { background: var(--coal); }
+
+.product-cards {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 50px;
+}
+
+@media (max-width: 1100px) { .product-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .product-cards { grid-template-columns: 1fr; } }
+
+.product-card {
+  border-radius: 20px;
+  padding: 36px 30px;
+  border: 1px solid rgba(200,144,26,0.15);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.product-card.main {
+  background: linear-gradient(145deg, rgba(200,144,26,0.12), rgba(42,107,60,0.08));
+  border-color: rgba(200,144,26,0.3);
+}
+
+.product-card.secondary { background: var(--slate); }
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.product-icon { font-size: 2.8rem; margin-bottom: 20px; }
+
+.product-name {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.product-purity {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.product-revenue {
+  font-family: var(--ff-display);
+  font-size: 2.4rem;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-top: 16px;
+}
+
+.product-revenue-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.spec-list { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.spec-key { color: var(--muted); }
+.spec-val { color: var(--text); font-weight: 600; }
+
+/* ─── FINANCIALS ────────────────────────────── */
+.financials-section {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(200,144,26,0.12);
+}
+
+.financials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+@media (max-width: 900px) { .financials-grid { grid-template-columns: 1fr; } }
+
+.chart-card {
+  background: var(--slate);
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(200,144,26,0.12);
+}
+
+.chart-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.chart-subtitle {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.pnl-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.pnl-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.pnl-table td {
+  padding: 14px 8px;
+  font-size: 0.88rem;
+}
+
+.pnl-table .label-col { color: var(--text-dim); }
+.pnl-table .val-col {
+  text-align: right;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', monospace;
+  color: var(--white);
+}
+
+.pnl-highlight td { background: rgba(200,144,26,0.08); }
+.pnl-highlight .label-col { color: var(--gold-light); font-weight: 700; }
+.pnl-highlight .val-col { color: var(--gold-light); font-size: 1.05rem; }
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.kpi-box {
+  background: var(--charcoal);
+  border: 1px solid rgba(200,144,26,0.12);
+  border-radius: 12px;
+  padding: 22px 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.kpi-box:hover {
+  border-color: var(--gold);
+  background: rgba(200,144,26,0.06);
+}
+
+.kpi-val {
+  font-family: var(--ff-display);
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.debt-strip {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.debt-pill {
+  flex: 1;
+  min-width: 120px;
+  background: var(--charcoal);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid rgba(200,144,26,0.1);
+}
+
+.debt-pill-val {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  color: var(--gold-light);
+}
+
+.debt-pill-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ─── POLICY STRIP ──────────────────────────── */
+.policy-strip {
+  background: linear-gradient(135deg, var(--green), #1A4025);
+  padding: 60px 6vw;
+  border-top: 1px solid rgba(200,144,26,0.2);
+  border-bottom: 1px solid rgba(200,144,26,0.2);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 700px) { .policy-strip { grid-template-columns: 1fr; } }
+
+.policy-strip-title {
+  font-family: var(--ff-display);
+  font-size: 2.4rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.policy-strip-sub { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+.policy-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.policy-benefit-pill {
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-pale);
+}
+
+/* ─── CONTACT ───────────────────────────────── */
+.contact-section { background: var(--coal); }
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 60px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+@media (max-width: 900px) { .contact-wrap { grid-template-columns: 1fr; } }
+
+.contact-info-title {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.contact-info-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--slate);
+  border: 1px solid rgba(200,144,26,0.1);
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  transition: all 0.25s;
+}
+
+.contact-detail:hover { border-color: rgba(200,144,26,0.35); }
+.contact-detail-icon {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: rgba(200,144,26,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.interest-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.interest-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--slate);
+  border: 1px solid rgba(200,144,26,0.15);
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: var(--ff-body);
+}
+
+.interest-btn:hover,
+.interest-btn.active {
+  background: rgba(200,144,26,0.12);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.form-card {
+  background: var(--charcoal);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(200,144,26,0.12);
+}
+
+.form-group { margin-bottom: 22px; }
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: var(--slate);
+  border: 1px solid rgba(200,144,26,0.12);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  transition: border-color 0.25s;
+  outline: none;
+}
+
+.form-input:focus { border-color: var(--gold); }
+.form-input::placeholder { color: var(--muted); }
+
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--gold);
+  color: var(--coal);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.form-submit:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200,144,26,0.4);
+}
+
+/* ─── FOOTER ────────────────────────────────── */
+footer {
+  background: var(--charcoal);
+  border-top: 1px solid rgba(200,144,26,0.12);
+  padding: 40px 6vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+.footer-logo em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.footer-copy { font-size: 0.8rem; color: var(--muted); }
+
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* ─── SCROLL ANIMATIONS ─────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-leaf text-brand-green text-3xl"></i>
-                    <span class="font-heading text-2xl font-bold text-gray-900 tracking-wide">ARK <span class="text-brand-green">BIOENERGIES</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#vision" class="text-gray-600 hover:text-brand-green font-medium transition">Vision 2026</a>
-                    <a href="#location" class="text-gray-600 hover:text-brand-green font-medium transition">Location</a>
-                    <a href="#process" class="text-gray-600 hover:text-brand-green font-medium transition">Technology</a>
-                    <a href="#financials" class="text-gray-600 hover:text-brand-green font-medium transition">Financials</a>
-                    <a href="#contact" class="px-5 py-2 bg-brand-green text-white rounded-full font-bold hover:bg-brand-dark transition shadow-lg">Contact Us</a>
-                </div>
-            </div>
+<!-- ─── NAVIGATION ─────────────────────────── -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <div class="leaf-icon">🌿</div>
+    <span>ARK <em>BIOENERGIES</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#process">Technology</a></li>
+    <li><a href="#feedstock">Feedstock</a></li>
+    <li><a href="#financials">Financials</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>ESY 2025-26 · E20 Sustained · February 2026</span>
+    </div>
+    <h1>
+      Fueling<br>
+      India's <span class="accent">Energy</span><br>
+      <span class="stroke">Independence</span>
+    </h1>
+    <p class="hero-sub">
+      Proposed 60 KLPD Grain-Based Ethanol Distillery &amp; 2.5 MW Co-Generation Plant near Bellary, Karnataka — aligned with India's E20 mandate and the emerging E27 roadmap.
+    </p>
+    <div class="hero-metrics">
+      <div>
+        <div class="hero-metric-val">60 KLPD</div>
+        <div class="hero-metric-label">Daily Capacity</div>
+      </div>
+      <div>
+        <div class="hero-metric-val">₹145 Cr</div>
+        <div class="hero-metric-label">Project Outlay</div>
+      </div>
+      <div>
+        <div class="hero-metric-val">23.5%</div>
+        <div class="hero-metric-label">Post-Tax IRR</div>
+      </div>
+      <div>
+        <div class="hero-metric-val">4.5 Yrs</div>
+        <div class="hero-metric-label">Payback Period</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#vision" class="btn-primary">Explore the Project</a>
+      <a href="#financials" class="btn-outline">Investment Metrics</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TICKER BANNER ─────────────────────────── -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">⚡ E20 Achieved — Nov 2025 <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌽 Maize Ethanol: ₹71.86/L <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📊 IRR: ~23.5% | DSCR: 2.2x <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🏭 60 KLPD · 1.98 Cr Litres/Year <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌿 ZLD + Rice Husk Co-Gen <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📍 Bellary District, Karnataka <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">💰 DFPD Subvention: Effective Rate 3.5% <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">⚡ E20 Achieved — Nov 2025 <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌽 Maize Ethanol: ₹71.86/L <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📊 IRR: ~23.5% | DSCR: 2.2x <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🏭 60 KLPD · 1.98 Cr Litres/Year <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🌿 ZLD + Rice Husk Co-Gen <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📍 Bellary District, Karnataka <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">💰 DFPD Subvention: Effective Rate 3.5% <span class="ticker-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ─── STATS STRIP ─────────────────────────── -->
+<div class="stats-strip">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-val"><span class="count" data-to="198">0</span><span class="stat-unit">Cr L</span></div>
+      <div class="stat-label">Annual Ethanol Production</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-val"><span class="count" data-to="162">0</span><span class="stat-unit">Cr ₹</span></div>
+      <div class="stat-label">Year-1 Revenue</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-val"><span class="count" data-to="47">0</span><span class="stat-unit">Cr ₹</span></div>
+      <div class="stat-label">EBITDA (29% margin)</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-val"><span class="count" data-to="25">0</span><span class="stat-unit">Cr ₹</span></div>
+      <div class="stat-label">Net Profit (PAT) Y1</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-4">
+      <div class="stat-val"><span class="count" data-to="330">0</span><span class="stat-unit">days</span></div>
+      <div class="stat-label">Annual Operating Days</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── VISION / ABOUT ─────────────────────────── -->
+<section id="vision" class="vision-section">
+  <div class="vision-text reveal">
+    <div class="section-label">Strategic Alignment · March 2026</div>
+    <h2 class="section-title">Fueling the <br>E20–E27 <br>Transition</h2>
+    <div class="divider"></div>
+    <p>India achieved the E20 ethanol blending milestone in November 2025 — four months ahead of schedule. As of February 2026, the 20% blending level has been sustained continuously for four consecutive months, with OMCs receiving 88.5 crore litres in February alone.</p>
+    <p>The national conversation has already moved to the post-E20 roadmap. ISMA formally approached the PMO in March 2026 urging a fast-tracked E22→E25→E27 roadmap. BIS has been directed to develop E27 fuel standards. For a plant commissioning in 2028, this trajectory is a direct demand tailwind.</p>
+    <div class="vision-features">
+      <div class="feature-row reveal reveal-delay-1">
+        <div class="feature-icon">🌾</div>
+        <div>
+          <div class="feature-title">Multi-Feedstock Flexibility</div>
+          <div class="feature-desc">Maize · Broken Rice · FCI Surplus Rice · Damaged Food Grains. Switch by season to maximise margins.</div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-bg h-screen flex items-center justify-center text-white relative">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-90"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-            <div class="inline-block px-4 py-1 border border-brand-green/50 bg-brand-dark/30 rounded-full mb-6 backdrop-blur-sm">
-                <span class="text-brand-accent font-bold text-sm tracking-wider uppercase"><i class="fa-solid fa-bolt mr-2"></i> ESY 2025-26: E20 Achieved</span>
-            </div>
-            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Fueling India's Energy <br> Independence
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
-                Proposed 60 KLPD Grain-Based Ethanol Distillery & 2.5 MW Co-Generation Plant in Kurnool, AP.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#executive-summary" class="px-8 py-4 bg-brand-green hover:bg-brand-dark text-white rounded-lg font-bold transition transform hover:-translate-y-1 shadow-xl">
-                    Executive Summary
-                </a>
-                <a href="#financials" class="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-brand-green text-white rounded-lg font-bold transition">
-                    Investment Metrics
-                </a>
-            </div>
+      </div>
+      <div class="feature-row reveal reveal-delay-2">
+        <div class="feature-icon">♻️</div>
+        <div>
+          <div class="feature-title">Zero Liquid Discharge (ZLD)</div>
+          <div class="feature-desc">MEE Evaporator + CPU system — 70% water recycled. DDGS animal feed as high-value by-product.</div>
         </div>
-    </section>
-
-    <!-- Executive Summary / Metrics -->
-    <section id="executive-summary" class="py-20 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
-                <!-- Text Content -->
-                <div>
-                    <h2 class="font-heading text-4xl font-bold text-gray-900 mb-6">Strategic Alignment in the <span class="gradient-text">2026 Context</span></h2>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        As of January 2026, India has successfully operationalized the E20 mandate. The focus has now shifted to sustaining feedstock security and regional capacity balance. Ark Bioenergies proposes a state-of-the-art bio-refinery in the Alur-Aspari belt.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        This project is not just a distillery; it is an agro-industrial node integrating the surplus of Andhra Pradesh and Karnataka, backed by the <strong>AP Industrial Development Policy 4.0</strong>.
-                    </p>
-                    
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-green mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Multi-Feedstock Capability</h4>
-                                <p class="text-sm text-gray-500">Designed for Maize, Broken Rice, and FCI Surplus Rice.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-green mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">ESG Compliant</h4>
-                                <p class="text-sm text-gray-500">Zero Liquid Discharge (ZLD) & Biomass Co-generation.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Metrics Grid -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-brand-green transform hover:-translate-y-1 transition">
-                        <div class="text-brand-green text-3xl mb-2"><i class="fa-solid fa-industry"></i></div>
-                        <div class="text-3xl font-bold text-gray-900">60 KLPD</div>
-                        <div class="text-sm text-gray-500 font-medium">Daily Production Capacity</div>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-brand-green transform hover:-translate-y-1 transition">
-                        <div class="text-brand-green text-3xl mb-2"><i class="fa-solid fa-bolt"></i></div>
-                        <div class="text-3xl font-bold text-gray-900">2.5 MW</div>
-                        <div class="text-sm text-gray-500 font-medium">Captive Co-Generation</div>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-brand-green transform hover:-translate-y-1 transition">
-                        <div class="text-brand-green text-3xl mb-2"><i class="fa-solid fa-sack-dollar"></i></div>
-                        <div class="text-3xl font-bold text-gray-900">25%</div>
-                        <div class="text-sm text-gray-500 font-medium">Projected Post-Tax IRR</div>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-brand-green transform hover:-translate-y-1 transition">
-                        <div class="text-brand-green text-3xl mb-2"><i class="fa-solid fa-calendar-check"></i></div>
-                        <div class="text-3xl font-bold text-gray-900">4.5 Yrs</div>
-                        <div class="text-sm text-gray-500 font-medium">Estimated Payback Period</div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="feature-row reveal reveal-delay-3">
+        <div class="feature-icon">⚡</div>
+        <div>
+          <div class="feature-title">Captive 2.5 MW Co-Generation</div>
+          <div class="feature-desc">25 TPH FBC Boiler on rice husk (₹3,500–4,500/MT). Energy self-sufficiency. APSPDCL grid as standby only.</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <!-- Location Advantage -->
-    <section id="location" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-brand-green font-bold tracking-wider uppercase text-sm">Strategic Placement</span>
-                <h2 class="font-heading text-4xl md:text-5xl font-bold mt-2">The "Border Advantage"</h2>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Leveraging the agricultural surplus of two states: Andhra Pradesh and Karnataka.</p>
-            </div>
+  <div class="policy-cards reveal reveal-delay-1">
+    <div class="policy-card">
+      <div class="policy-tag">✅ Active — 2024–29</div>
+      <div class="policy-card-title">Karnataka Industrial Policy 2020-25 / New Policy</div>
+      <div class="policy-items">
+        <div class="policy-item">Investment promotion subsidies for bioenergy</div>
+        <div class="policy-item">Deemed non-agricultural land status for industrial units</div>
+        <div class="policy-item">Single window clearances via Invest Karnataka portal</div>
+        <div class="policy-item">Power tariff concessions for captive power users</div>
+      </div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-tag">✅ Active — ESY 2025-26</div>
+      <div class="policy-card-title">DFPD Interest Subvention Scheme</div>
+      <div class="policy-items">
+        <div class="policy-item">6% p.a. subvention on term loan interest</div>
+        <div class="policy-item">Effective interest rate reduced to ~3.5%</div>
+        <div class="policy-item">5-year coverage incl. 1-year moratorium on principal</div>
+        <div class="policy-item">Covers distillation, ZLD, and storage infrastructure</div>
+        <div class="policy-item">38+ plants currently benefiting from scheme</div>
+      </div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-tag">⚡ Emerging — Post E20</div>
+      <div class="policy-card-title">E27 Roadmap & Flex-Fuel Push</div>
+      <div class="policy-items">
+        <div class="policy-item">ISMA formally requested E22→E25→E27 roadmap (Mar 2026)</div>
+        <div class="policy-item">BIS directed to develop E27 fuel quality standards</div>
+        <div class="policy-item">Additional ~350-400 Cr L/year demand uplift at E27</div>
+        <div class="policy-item">Plant commissioning in 2028 directly benefits</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Advantage 1 -->
-                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-brand-green transition group">
-                    <div class="w-14 h-14 bg-brand-green/20 rounded-full flex items-center justify-center text-brand-green mb-6 group-hover:bg-brand-green group-hover:text-white transition">
-                        <i class="fa-solid fa-map-location-dot text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Alur / Aspari Hub</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Located just 25-35km from Ballari (Karnataka). Provides access to the Tungabhadra "Rice Bowl" while securing incentives from the AP Industrial Policy.
-                    </p>
-                </div>
+<!-- ─── LOCATION ──────────────────────────────── -->
+<section id="location" class="location-section">
+  <div class="section-label">Strategic Location</div>
+  <h2 class="section-title">The Border Advantage</h2>
+  <p class="section-sub">Bellary, Karnataka — at the intersection of two states' agricultural surplus and industrial incentives.</p>
 
-                <!-- Advantage 2 -->
-                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-brand-green transition group">
-                    <div class="w-14 h-14 bg-brand-green/20 rounded-full flex items-center justify-center text-brand-green mb-6 group-hover:bg-brand-green group-hover:text-white transition">
-                        <i class="fa-solid fa-wheat-awn text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Feedstock Security</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        <strong>Maize:</strong> Kurnool & Anantapur.<br>
-                        <strong>Broken Rice:</strong> Raichur & Sindhanur.<br>
-                        <strong>FCI Rice:</strong> Close proximity to Guntakal logistics hub.
-                    </p>
-                </div>
+  <div class="location-grid">
+    <!-- MAP SVG -->
+    <div class="map-container reveal">
+      <div class="map-svg-wrapper">
+        <svg viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:520px">
+          <defs>
+            <radialGradient id="glow-gold" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#C8901A" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#C8901A" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="glow-green" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#2A6B3C" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2A6B3C" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="blur4">
+              <feGaussianBlur stdDeviation="4"/>
+            </filter>
+          </defs>
 
-                <!-- Advantage 3 -->
-                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-brand-green transition group">
-                    <div class="w-14 h-14 bg-brand-green/20 rounded-full flex items-center justify-center text-brand-green mb-6 group-hover:bg-brand-green group-hover:text-white transition">
-                        <i class="fa-solid fa-water text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Infrastructure</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        <strong>Water:</strong> 50,000 KL on-site reservoir + Air Cooled Condensers.<br>
-                        <strong>Power:</strong> Rice Husk based Co-Gen (Fuel available @ ₹3,500/ton).
-                    </p>
-                </div>
-            </div>
+          <!-- Background -->
+          <rect width="520" height="440" fill="#0E1A14" rx="12"/>
+
+          <!-- Grid lines -->
+          <g stroke="#1E3028" stroke-width="1">
+            <line x1="0" y1="88" x2="520" y2="88"/>
+            <line x1="0" y1="176" x2="520" y2="176"/>
+            <line x1="0" y1="264" x2="520" y2="264"/>
+            <line x1="0" y1="352" x2="520" y2="352"/>
+            <line x1="104" y1="0" x2="104" y2="440"/>
+            <line x1="208" y1="0" x2="208" y2="440"/>
+            <line x1="312" y1="0" x2="312" y2="440"/>
+            <line x1="416" y1="0" x2="416" y2="440"/>
+          </g>
+
+          <!-- State boundary (AP-Karnataka) — simplified diagonal line -->
+          <path d="M 160 0 L 200 100 L 240 180 L 260 260 L 270 350 L 265 440"
+                fill="none" stroke="#C8901A" stroke-width="2.5" stroke-dasharray="10,6" opacity="0.6"/>
+          <!-- State labels -->
+          <text x="320" y="60" font-family="'Bebas Neue', sans-serif" font-size="22" fill="#2A6B3C" opacity="0.7" letter-spacing="3">KARNATAKA</text>
+          <text x="70" y="60" font-family="'Bebas Neue', sans-serif" font-size="22" fill="#2E7D8C" opacity="0.7" letter-spacing="2">ANDHRA</text>
+          <text x="90" y="84" font-family="'Bebas Neue', sans-serif" font-size="18" fill="#2E7D8C" opacity="0.6" letter-spacing="2">PRADESH</text>
+
+          <!-- Tungabhadra River -->
+          <path d="M 50 200 Q 140 180 220 200 Q 310 220 390 190 Q 450 175 510 185"
+                fill="none" stroke="#1E6B8C" stroke-width="3" opacity="0.5"/>
+          <text x="260" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#3E9BBC" opacity="0.7" letter-spacing="1">TUNGABHADRA RIVER</text>
+
+          <!-- Glow behind Bellary -->
+          <circle cx="295" cy="230" r="60" fill="url(#glow-gold)" filter="url(#blur4)"/>
+
+          <!-- Bellary city marker -->
+          <circle cx="295" cy="230" r="18" fill="rgba(200,144,26,0.15)" stroke="#C8901A" stroke-width="2"/>
+          <circle cx="295" cy="230" r="8" fill="#C8901A"/>
+          <circle cx="295" cy="230" r="4" fill="#F5E6C8"/>
+
+          <!-- Pulsing ring animation -->
+          <circle cx="295" cy="230" r="18" fill="none" stroke="#C8901A" stroke-width="1.5" opacity="0.6">
+            <animate attributeName="r" values="18;36;18" dur="2.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Ark Plant marker (slightly offset from Bellary) -->
+          <circle cx="310" cy="215" r="12" fill="rgba(42,107,60,0.2)" stroke="#3D9B58" stroke-width="1.5"/>
+          <circle cx="310" cy="215" r="5" fill="#3D9B58"/>
+
+          <!-- Bellary label -->
+          <rect x="306" y="240" width="100" height="26" rx="5" fill="rgba(14,26,20,0.9)" stroke="#C8901A" stroke-width="1"/>
+          <text x="356" y="257" font-family="'Bebas Neue', sans-serif" font-size="14" fill="#E8A82A" text-anchor="middle" letter-spacing="2">BELLARY</text>
+
+          <!-- Ark Plant label -->
+          <rect x="322" y="200" width="108" height="22" rx="4" fill="rgba(42,107,60,0.8)" stroke="#3D9B58" stroke-width="1"/>
+          <text x="376" y="215" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#E4F2E8" text-anchor="middle" font-weight="700">🏭 ARK PLANT SITE</text>
+
+          <!-- Other cities -->
+          <!-- Kurnool -->
+          <circle cx="160" cy="155" r="5" fill="#3E9BBC" opacity="0.7"/>
+          <text x="170" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#8DCCE0" opacity="0.9">Kurnool</text>
+
+          <!-- Raichur -->
+          <circle cx="320" cy="155" r="5" fill="#6B9B3C" opacity="0.7"/>
+          <text x="330" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#A8CC78" opacity="0.9">Raichur</text>
+
+          <!-- Guntakal -->
+          <circle cx="185" cy="265" r="5" fill="#3E9BBC" opacity="0.7"/>
+          <text x="195" y="262" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#8DCCE0" opacity="0.9">Guntakal</text>
+
+          <!-- Hospet -->
+          <circle cx="270" cy="210" r="4" fill="#6B9B3C" opacity="0.7"/>
+          <text x="230" y="207" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#A8CC78" opacity="0.9">Hospet</text>
+
+          <!-- Adoni -->
+          <circle cx="200" cy="225" r="4" fill="#3E9BBC" opacity="0.7"/>
+          <text x="158" y="238" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#8DCCE0" opacity="0.9">Adoni</text>
+
+          <!-- Distance lines -->
+          <line x1="295" y1="230" x2="185" y2="265" stroke="#C8901A" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+          <text x="228" y="258" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#E8A82A" opacity="0.8">~55 km</text>
+
+          <!-- Roads -->
+          <path d="M 295 230 L 160 155" stroke="#444" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.35"/>
+          <path d="M 295 230 L 320 155" stroke="#444" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.35"/>
+          <path d="M 295 230 L 185 265" stroke="#444" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.35"/>
+
+          <!-- Grain catchment zones -->
+          <ellipse cx="220" cy="170" rx="80" ry="55" fill="none" stroke="#C8901A" stroke-width="1" stroke-dasharray="3,5" opacity="0.25"/>
+          <text x="170" y="130" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#E8A82A" opacity="0.6">Kurnool Maize Belt</text>
+
+          <ellipse cx="350" cy="175" rx="70" ry="45" fill="none" stroke="#3D9B58" stroke-width="1" stroke-dasharray="3,5" opacity="0.25"/>
+          <text x="320" y="128" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#A8CC78" opacity="0.6">Raichur Rice Bowl</text>
+
+          <!-- NH Badge -->
+          <rect x="230" y="282" width="50" height="18" rx="4" fill="#2C3E50" stroke="#556"/>
+          <text x="255" y="295" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#BDC3C7" text-anchor="middle" font-weight="700">NH-67</text>
+
+          <!-- Legend -->
+          <rect x="14" y="390" width="250" height="38" rx="6" fill="rgba(0,0,0,0.5)"/>
+          <circle cx="30" cy="409" r="5" fill="#C8901A"/>
+          <text x="40" y="413" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#E8A82A">Bellary / Plant Site</text>
+          <circle cx="110" cy="409" r="4" fill="#3E9BBC"/>
+          <text x="120" y="413" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#8DCCE0">AP Cities</text>
+          <circle cx="175" cy="409" r="4" fill="#6B9B3C"/>
+          <text x="185" y="413" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#A8CC78">KA Cities</text>
+        </svg>
+      </div>
+      <div style="padding: 20px 24px; border-top: 1px solid rgba(200,144,26,0.12); background: rgba(14,14,15,0.5);">
+        <div style="font-size:0.75rem; color:var(--muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Key Distances</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div style="font-size:0.8rem; color:var(--text-dim);">🚛 Guntakal OMC Depot: <strong style="color:var(--gold-light)">~55 km</strong></div>
+          <div style="font-size:0.8rem; color:var(--text-dim);">🌾 Raichur AMC: <strong style="color:var(--gold-light)">~60 km</strong></div>
+          <div style="font-size:0.8rem; color:var(--text-dim);">🌽 Kurnool AMC: <strong style="color:var(--gold-light)">~80 km</strong></div>
+          <div style="font-size:0.8rem; color:var(--text-dim);">🏭 Hospet Rail: <strong style="color:var(--gold-light)">~25 km</strong></div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Technology & Process -->
-    <section id="process" class="py-20 bg-brand-light/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-heading text-4xl font-bold text-gray-900">Technical Architecture</h2>
-                <p class="text-gray-600 mt-2">Dry Milling Process with Zero Liquid Discharge</p>
-            </div>
-
-            <div class="relative">
-                <!-- Connecting Line -->
-                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-                    <!-- Step 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center group hover:-translate-y-2 transition duration-300">
-                        <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4 text-2xl font-bold">1</div>
-                        <h4 class="font-bold text-gray-800 mb-2">Milling</h4>
-                        <p class="text-xs text-gray-500">Grain cleaning and Hammer Milling to fine flour.</p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center group hover:-translate-y-2 transition duration-300">
-                        <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4 text-2xl font-bold">2</div>
-                        <h4 class="font-bold text-gray-800 mb-2">Liquefaction</h4>
-                        <p class="text-xs text-gray-500">Jet Cooking at 110°C with Alpha-amylase.</p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center group hover:-translate-y-2 transition duration-300">
-                        <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4 text-2xl font-bold">3</div>
-                        <h4 class="font-bold text-gray-800 mb-2">Fermentation</h4>
-                        <p class="text-xs text-gray-500">SSF process with Yeast to convert starch to alcohol.</p>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center group hover:-translate-y-2 transition duration-300">
-                        <div class="w-16 h-16 mx-auto bg-brand-green text-white rounded-full flex items-center justify-center mb-4 text-2xl font-bold">4</div>
-                        <h4 class="font-bold text-gray-800 mb-2">Distillation</h4>
-                        <p class="text-xs text-gray-500">Multipressure Distillation & Molecular Sieves for 99.8% purity.</p>
-                    </div>
-
-                    <!-- Step 5 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center group hover:-translate-y-2 transition duration-300">
-                        <div class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4 text-2xl font-bold">5</div>
-                        <h4 class="font-bold text-gray-800 mb-2">ZLD (DDGS)</h4>
-                        <p class="text-xs text-gray-500">Effluent to MEE & Dryer -> High Protein Cattle Feed.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- ADVANTAGES -->
+    <div class="location-advantages">
+      <div class="adv-card reveal reveal-delay-1">
+        <div class="adv-num">01</div>
+        <div>
+          <div class="distance-pill">📍 Bellary District, Karnataka</div>
+          <div class="adv-title">Dual-State Agricultural Access</div>
+          <div class="adv-desc">Bellary sits at the heart of a region straddling both Karnataka and Andhra Pradesh. Maize from Bellary, Raichur, and Koppal (Karnataka) and rice/maize from Kurnool and Anantapur (AP) — all within 100 km. No single-state supply dependency.</div>
         </div>
-    </section>
-
-    <!-- Financials -->
-    <section id="financials" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <h2 class="font-heading text-4xl font-bold text-gray-900">Financial Analysis <span class="text-sm font-normal text-gray-500 ml-2">(Revised Jan 2026)</span></h2>
-                <p class="text-gray-600 mt-2">Robust viability supported by DFPD Interest Subvention & AP Policy 4.0.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
-                <!-- Chart 1: Project Cost -->
-                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-xl mb-6 text-center">Project Cost Breakdown (₹145 Cr)</h3>
-                    <div class="relative h-64 w-full">
-                        <canvas id="costChart"></canvas>
-                    </div>
-                    <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
-                         <div class="flex justify-between border-b py-2"><span>Land & Dev:</span> <span class="font-mono font-bold">₹12 Cr</span></div>
-                         <div class="flex justify-between border-b py-2"><span>Civil Works:</span> <span class="font-mono font-bold">₹28 Cr</span></div>
-                         <div class="flex justify-between border-b py-2"><span>Plant & Mach:</span> <span class="font-mono font-bold">₹68 Cr</span></div>
-                         <div class="flex justify-between border-b py-2"><span>Utilities:</span> <span class="font-mono font-bold">₹15 Cr</span></div>
-                    </div>
-                </div>
-
-                <!-- Chart 2: Means of Finance & Profitability -->
-                <div class="flex flex-col gap-6">
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-sm flex-1">
-                        <h3 class="font-bold text-xl mb-4 text-center">Means of Finance</h3>
-                        <div class="relative h-48 w-full flex justify-center">
-                            <canvas id="financeChart"></canvas>
-                        </div>
-                        <p class="text-center text-sm text-gray-500 mt-4">
-                            *Includes 6% Interest Subvention benefit
-                        </p>
-                    </div>
-
-                    <div class="bg-brand-dark text-white p-6 rounded-2xl shadow-lg">
-                        <h3 class="font-bold text-xl mb-4 border-b border-white/20 pb-2">Year 1 Projections</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span>Revenue (Ethanol + DDGS)</span>
-                                <span class="font-mono text-lg font-bold">₹162.00 Cr</span>
-                            </div>
-                            <div class="flex justify-between items-center text-brand-accent">
-                                <span>EBITDA (29% Margin)</span>
-                                <span class="font-mono text-lg font-bold">₹47.00 Cr</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span>Net Profit (PAT)</span>
-                                <span class="font-mono text-lg font-bold">₹25.08 Cr</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="adv-card reveal reveal-delay-2">
+        <div class="adv-num">02</div>
+        <div>
+          <div class="distance-pill">🚂 Railway Freight Corridor</div>
+          <div class="adv-title">Logistics Infrastructure</div>
+          <div class="adv-desc">Hospet Railway Junction (~25 km) and Guntakal (~55 km) provide bulk grain inflow and ethanol dispatch capability. NH-67 connects to all OMC depots. Guntakal is a major petroleum product distribution node — ideal for ethanol offtake.</div>
         </div>
-    </section>
-
-    <!-- Policy Banner -->
-    <section class="py-10 bg-gradient-to-r from-brand-green to-brand-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-6 md:mb-0">
-                <h3 class="text-2xl font-heading font-bold">AP Industrial Policy 4.0 (2024-29)</h3>
-                <p class="opacity-90">Project eligible for 100% Net SGST Reimbursement & ₹1.00/unit Power Subsidy.</p>
-            </div>
-            <a href="#contact" class="px-6 py-3 bg-white text-brand-green font-bold rounded shadow hover:bg-gray-100 transition">
-                Request Detailed DPR
-            </a>
+      </div>
+      <div class="adv-card reveal reveal-delay-3">
+        <div class="adv-num">03</div>
+        <div>
+          <div class="distance-pill">💧 Tungabhadra Command Area</div>
+          <div class="adv-title">Feedstock — The Rice Bowl</div>
+          <div class="adv-desc">The Tungabhadra command area (Bellary, Raichur, Sindhanur, Koppal) generates massive broken rice volumes from 300+ rice mills. Broken rice at ₹22-26/kg, local and abundant. Combined with Bellary's own maize arrivals, the plant has a near-unmatched multi-feedstock base.</div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="p-10 bg-slate-900 text-white flex flex-col justify-between">
-                        <div>
-                            <h2 class="font-heading text-3xl font-bold mb-4">Get in Touch</h2>
-                            <p class="text-gray-400 mb-8">Discuss investment opportunities or feedstock partnerships.</p>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mr-4">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </div>
-                                    <span>Arjun@arkbioenergies.in</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mr-4">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                    </div>
-                                    <span>Alur/Aspari Mandal,<br>Kurnool District, AP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                             <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Follow Us</div>
-                             <div class="flex space-x-4">
-                                 <a href="#" class="hover:text-brand-green transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                                 <a href="#" class="hover:text-brand-green transition"><i class="fa-brands fa-twitter text-xl"></i></a>
-                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="p-10">
-                        <form onsubmit="event.preventDefault(); alert('Thank you. Arjun will contact you shortly.');">
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-brand-green" placeholder="Your Name">
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                                <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-brand-green" placeholder="john@company.com">
-                            </div>
-                            <div class="mb-6">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">Interest</label>
-                                <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-brand-green">
-                                    <option>Investment Inquiry</option>
-                                    <option>Feedstock Supply (Maize/Rice)</option>
-                                    <option>DDGS Procurement</option>
-                                </select>
-                            </div>
-                            <button class="w-full bg-brand-green text-white font-bold py-3 rounded-lg hover:bg-brand-dark transition">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="adv-card reveal reveal-delay-4">
+        <div class="adv-num">04</div>
+        <div>
+          <div class="distance-pill">🏭 OMC Deficit Zone Premium</div>
+          <div class="adv-title">Allocation Advantage</div>
+          <div class="adv-desc">South India is a structural ethanol production deficit zone. Even with ESY 2025-26 showing 1.7x national tender oversubscription, OMC allocation policy actively favors regional balance. South Indian plants receive preferential allocation — a structural competitive moat.</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-gray-400 py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
-            <div class="mb-4 md:mb-0">
-                &copy; 2026 Ark Bioenergies Pvt Ltd. All rights reserved.
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition">Disclaimer</a>
-            </div>
+<!-- ─── PROCESS TECHNOLOGY ──────────────────── -->
+<section id="process" class="process-section">
+  <div class="section-label">Dry Milling — Industry Standard</div>
+  <h2 class="section-title">Plant Technical <br>Architecture</h2>
+  <div class="divider"></div>
+
+  <!-- Tabs -->
+  <div class="process-tabs">
+    <button class="process-tab active" onclick="switchTab('flow')">Process Flow</button>
+    <button class="process-tab" onclick="switchTab('cogen')">Co-Generation</button>
+    <button class="process-tab" onclick="switchTab('zld')">ZLD System</button>
+  </div>
+
+  <!-- MAIN PROCESS FLOW DIAGRAM -->
+  <div id="tab-flow" class="diagram-panel active">
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" width="100%" style="min-width:700px">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#C8901A"/>
+          </marker>
+          <marker id="arr-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#3D9B58"/>
+          </marker>
+          <marker id="arr-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#3E9BBC"/>
+          </marker>
+          <linearGradient id="box-gold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2A2010"/>
+            <stop offset="100%" stop-color="#1E1810"/>
+          </linearGradient>
+          <linearGradient id="box-green" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#122018"/>
+            <stop offset="100%" stop-color="#0C1812"/>
+          </linearGradient>
+          <linearGradient id="box-blue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0E1E2A"/>
+            <stop offset="100%" stop-color="#081620"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Stage Labels left side -->
+        <text x="8" y="120" transform="rotate(-90,8,120)" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#C8901A" opacity="0.6" letter-spacing="2" text-anchor="middle">INTAKE</text>
+        <text x="8" y="240" transform="rotate(-90,8,240)" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#E8A82A" opacity="0.6" letter-spacing="2" text-anchor="middle">BIOCONV.</text>
+        <text x="8" y="360" transform="rotate(-90,8,360)" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#3D9B58" opacity="0.6" letter-spacing="2" text-anchor="middle">DISTILL.</text>
+        <text x="8" y="480" transform="rotate(-90,8,480)" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#3E9BBC" opacity="0.6" letter-spacing="2" text-anchor="middle">ZLD</text>
+
+        <!-- Horizontal stage dividers -->
+        <line x1="20" y1="170" x2="890" y2="170" stroke="rgba(200,144,26,0.1)" stroke-width="1"/>
+        <line x1="20" y1="300" x2="890" y2="300" stroke="rgba(200,144,26,0.1)" stroke-width="1"/>
+        <line x1="20" y1="420" x2="890" y2="420" stroke="rgba(200,144,26,0.1)" stroke-width="1"/>
+
+        <!-- ROW 1: INTAKE -->
+        <!-- Grain Receipt -->
+        <rect x="25" y="70" width="115" height="65" rx="8" fill="url(#box-gold)" stroke="#C8901A" stroke-width="1.5"/>
+        <text x="83" y="95" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#E8A82A" text-anchor="middle" letter-spacing="1">GRAIN RECEIPT</text>
+        <text x="83" y="110" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#B8A870" text-anchor="middle">Maize / Rice / DFG</text>
+        <text x="83" y="124" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#8A7850" text-anchor="middle">10,000 MT Silo</text>
+        <rect x="50" y="126" width="65" height="12" rx="3" fill="rgba(200,144,26,0.15)" stroke="rgba(200,144,26,0.3)" stroke-width="0.5"/>
+        <text x="82" y="135" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#C8901A" text-anchor="middle">30-45 day buffer</text>
+
+        <!-- Arrow -->
+        <line x1="141" y1="102" x2="162" y2="102" stroke="#C8901A" stroke-width="1.8" marker-end="url(#arr)"/>
+
+        <!-- Cleaning -->
+        <rect x="164" y="70" width="115" height="65" rx="8" fill="url(#box-gold)" stroke="#C8901A" stroke-width="1.5"/>
+        <text x="222" y="95" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#E8A82A" text-anchor="middle" letter-spacing="1">CLEANING</text>
+        <text x="222" y="110" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#B8A870" text-anchor="middle">De-stoner + Magnetic</text>
+        <text x="222" y="124" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#8A7850" text-anchor="middle">Separator</text>
+
+        <!-- Arrow -->
+        <line x1="280" y1="102" x2="301" y2="102" stroke="#C8901A" stroke-width="1.8" marker-end="url(#arr)"/>
+
+        <!-- Hammer Mill -->
+        <rect x="303" y="70" width="115" height="65" rx="8" fill="url(#box-gold)" stroke="#C8901A" stroke-width="1.5"/>
+        <text x="361" y="92" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#E8A82A" text-anchor="middle" letter-spacing="1">HAMMER MILL</text>
+        <text x="361" y="107" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#B8A870" text-anchor="middle">Fine flour &lt;1 mm</text>
+        <rect x="328" y="116" width="65" height="12" rx="3" fill="rgba(200,144,26,0.15)" stroke="rgba(200,144,26,0.3)" stroke-width="0.5"/>
+        <text x="360" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#C8901A" text-anchor="middle">2 × 15 TPH</text>
+
+        <!-- ROW 2: BIOCONVERSION -->
+        <!-- Arrow down from mill -->
+        <line x1="361" y1="136" x2="361" y2="185" stroke="#C8901A" stroke-width="1.8" marker-end="url(#arr)"/>
+
+        <!-- Slurry/Jet Cooker -->
+        <rect x="303" y="187" width="115" height="68" rx="8" fill="url(#box-gold)" stroke="#E8A82A" stroke-width="1.8"/>
+        <text x="361" y="208" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#F5E6C8" text-anchor="middle" letter-spacing="1">JET COOKER</text>
+        <text x="361" y="222" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#D4C080" text-anchor="middle">Liquefaction 105-110°C</text>
+        <text x="361" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8A870" text-anchor="middle">α-Amylase enzyme</text>
+        <rect x="328" y="242" width="65" height="11" rx="3" fill="rgba(232,168,42,0.2)" stroke="rgba(232,168,42,0.4)" stroke-width="0.5"/>
+        <text x="360" y="250" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#E8A82A" text-anchor="middle">Starch Gelatinized</text>
+
+        <!-- Arrow left from jet cooker -->
+        <line x1="302" y1="221" x2="281" y2="221" stroke="#C8901A" stroke-width="1.8" marker-end="url(#arr)"/>
+
+        <!-- Flash Cooler -->
+        <rect x="164" y="187" width="115" height="68" rx="8" fill="url(#box-gold)" stroke="#C8901A" stroke-width="1.5"/>
+        <text x="222" y="208" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#E8A82A" text-anchor="middle" letter-spacing="1">FLASH COOLER</text>
+        <text x="222" y="222" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#B8A870" text-anchor="middle">Cool to 62°C</text>
+        <text x="222" y="236" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#8A7850" text-anchor="middle">Glucoamylase added</text>
+
+        <line x1="163" y1="221" x2="142" y2="221" stroke="#C8901A" stroke-width="1.8" marker-end="url(#arr)"/>
+
+        <!-- Fermenters -->
+        <rect x="25" y="187" width="115" height="68" rx="8" fill="rgba(30,60,25,0.8)" stroke="#3D9B58" stroke-width="2"/>
+        <text x="83" y="207" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#6FCF97" text-anchor="middle" letter-spacing="1">FERMENTERS</text>
+        <text x="83" y="221" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#A8D8B8" text-anchor="middle">SSF · 48-52 hours</text>
+        <text x="83" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#80B890" text-anchor="middle">2 × 500 KL SS tanks</text>
+        <rect x="50" y="242" width="65" height="11" rx="3" fill="rgba(61,155,88,0.2)" stroke="rgba(61,155,88,0.4)" stroke-width="0.5"/>
+        <text x="82" y="250" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#6FCF97" text-anchor="middle">8-10% Alcohol Wash</text>
+
+        <!-- CO2 from fermenters -->
+        <line x1="83" y1="187" x2="83" y2="165" stroke="rgba(150,180,150,0.6)" stroke-width="1.2" stroke-dasharray="4,3"/>
+        <text x="83" y="162" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#80B890" text-anchor="middle">CO₂ ~45 TPD</text>
+        <text x="83" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#607860" text-anchor="middle">(to scrubber)</text>
+
+        <!-- Arrow from fermenter down to distillation -->
+        <line x1="83" y1="256" x2="83" y2="312" stroke="#3D9B58" stroke-width="1.8" marker-end="url(#arr-g)"/>
+
+        <!-- ROW 3: DISTILLATION -->
+        <!-- Analyzer -->
+        <rect x="25" y="314" width="105" height="68" rx="8" fill="url(#box-blue)" stroke="#3E9BBC" stroke-width="1.5"/>
+        <text x="78" y="334" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#7ECFE0" text-anchor="middle" letter-spacing="1">ANALYZER</text>
+        <text x="78" y="348" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B8C8" text-anchor="middle">Strip alcohol</text>
+        <text x="78" y="361" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#6090A0" text-anchor="middle">from fermented wash</text>
+        <rect x="48" y="370" width="60" height="10" rx="3" fill="rgba(62,155,188,0.15)" stroke="rgba(62,155,188,0.35)" stroke-width="0.5"/>
+        <text x="78" y="378" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#7ECFE0" text-anchor="middle">~40% v/v vapor</text>
+
+        <!-- Arrow right -->
+        <line x1="131" y1="348" x2="152" y2="348" stroke="#3E9BBC" stroke-width="1.8" marker-end="url(#arr-b)"/>
+
+        <!-- Degassing -->
+        <rect x="154" y="314" width="105" height="68" rx="8" fill="url(#box-blue)" stroke="#3E9BBC" stroke-width="1.5"/>
+        <text x="207" y="334" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#7ECFE0" text-anchor="middle" letter-spacing="1">DEGASSING</text>
+        <text x="207" y="348" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B8C8" text-anchor="middle">Remove CO₂</text>
+        <text x="207" y="361" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#6090A0" text-anchor="middle">Aldehydes, Esters</text>
+
+        <line x1="260" y1="348" x2="281" y2="348" stroke="#3E9BBC" stroke-width="1.8" marker-end="url(#arr-b)"/>
+
+        <!-- Rectifier -->
+        <rect x="283" y="314" width="105" height="68" rx="8" fill="url(#box-blue)" stroke="#3E9BBC" stroke-width="1.8"/>
+        <text x="336" y="334" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#AEE8F8" text-anchor="middle" letter-spacing="1">RECTIFIER</text>
+        <text x="336" y="348" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#90C8D8" text-anchor="middle">Rectified Spirit</text>
+        <rect x="306" y="358" width="60" height="10" rx="3" fill="rgba(62,155,188,0.25)" stroke="rgba(62,155,188,0.5)" stroke-width="0.5"/>
+        <text x="336" y="366" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#AEE8F8" text-anchor="middle">95% v/v RS</text>
+
+        <line x1="389" y1="348" x2="410" y2="348" stroke="#3E9BBC" stroke-width="1.8" marker-end="url(#arr-b)"/>
+
+        <!-- MSDH -->
+        <rect x="412" y="314" width="120" height="68" rx="8" fill="rgba(20,40,25,0.9)" stroke="#3D9B58" stroke-width="2"/>
+        <text x="472" y="331" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#6FCF97" text-anchor="middle" letter-spacing="1">MOLECULAR</text>
+        <text x="472" y="345" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#6FCF97" text-anchor="middle" letter-spacing="1">SIEVE (MSDH)</text>
+        <text x="472" y="358" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#A8D8B8" text-anchor="middle">Zeolite PSA beds</text>
+        <rect x="442" y="368" width="60" height="12" rx="4" fill="rgba(61,155,88,0.25)" stroke="#3D9B58" stroke-width="1"/>
+        <text x="472" y="377" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#6FCF97" text-anchor="middle" font-weight="700">99.8% v/v</text>
+
+        <line x1="533" y1="348" x2="554" y2="348" stroke="#3D9B58" stroke-width="2" marker-end="url(#arr-g)"/>
+
+        <!-- PRODUCT STORAGE — highlighted -->
+        <rect x="556" y="295" width="130" height="108" rx="10" fill="rgba(40,30,10,0.95)" stroke="#E8A82A" stroke-width="2.5"/>
+        <text x="621" y="322" font-family="'Bebas Neue', sans-serif" font-size="14" fill="#F5E6C8" text-anchor="middle" letter-spacing="1">PRODUCT</text>
+        <text x="621" y="338" font-family="'Bebas Neue', sans-serif" font-size="14" fill="#F5E6C8" text-anchor="middle" letter-spacing="1">STORAGE</text>
+        <text x="621" y="355" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#D4C080" text-anchor="middle">SS 316 Tanks ≥3,000 KL</text>
+        <text x="621" y="368" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#D4C080" text-anchor="middle">≥15 day buffer</text>
+        <!-- Revenue label -->
+        <rect x="568" y="376" width="106" height="22" rx="5" fill="rgba(200,144,26,0.3)" stroke="#C8901A" stroke-width="1"/>
+        <text x="621" y="391" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#F5E6C8" text-anchor="middle" letter-spacing="1">₹71.86/LITRE</text>
+
+        <!-- OMC Dispatch arrow -->
+        <line x1="687" y1="349" x2="740" y2="349" stroke="#E8A82A" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="742" y="308" width="130" height="80" rx="8" fill="rgba(40,30,10,0.7)" stroke="#C8901A" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="807" y="332" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#E8A82A" text-anchor="middle" letter-spacing="1">OMC DISPATCH</text>
+        <text x="807" y="348" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#B8A870" text-anchor="middle">HPCL · BPCL · IOCL</text>
+        <text x="807" y="362" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#B8A870" text-anchor="middle">Guntakal TPC Depot</text>
+        <text x="807" y="376" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#8A7850" text-anchor="middle">~55 km distance</text>
+
+        <!-- ROW 4: ZLD -->
+        <!-- Whole Stillage down from analyzer -->
+        <line x1="78" y1="383" x2="78" y2="432" stroke="#3E9BBC" stroke-width="1.5" marker-end="url(#arr-b)"/>
+        <text x="95" y="408" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#6090A0">Whole Stillage</text>
+
+        <!-- Decanter -->
+        <rect x="25" y="434" width="110" height="60" rx="8" fill="rgba(20,15,8,0.9)" stroke="#C8901A" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="80" y="455" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#E8A82A" text-anchor="middle" letter-spacing="1">DECANTER</text>
+        <text x="80" y="468" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8A870" text-anchor="middle">Wet Cake + Thin Stillage</text>
+        <rect x="48" y="475" width="64" height="10" rx="3" fill="rgba(200,144,26,0.12)" stroke="rgba(200,144,26,0.25)" stroke-width="0.5"/>
+        <text x="80" y="483" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#C8901A" text-anchor="middle">Centrifuge Sep.</text>
+
+        <line x1="136" y1="464" x2="157" y2="464" stroke="#C8901A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <!-- MEE -->
+        <rect x="159" y="434" width="110" height="60" rx="8" fill="rgba(20,15,8,0.9)" stroke="#C8901A" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="214" y="452" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#E8A82A" text-anchor="middle" letter-spacing="1">MEE (5-7 EFFECT)</text>
+        <text x="214" y="465" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8A870" text-anchor="middle">Thin Stillage → Syrup</text>
+        <text x="214" y="477" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#8A7850" text-anchor="middle">35-40% solids</text>
+
+        <line x1="270" y1="464" x2="291" y2="464" stroke="#C8901A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <!-- DDGS Dryer -->
+        <rect x="293" y="434" width="110" height="60" rx="8" fill="rgba(12,24,18,0.9)" stroke="#3D9B58" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="348" y="453" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#6FCF97" text-anchor="middle" letter-spacing="1">DDGS DRYER</text>
+        <text x="348" y="466" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#A8D8B8" text-anchor="middle">Steam Tube Bundle</text>
+        <rect x="318" y="473" width="60" height="10" rx="3" fill="rgba(61,155,88,0.2)" stroke="rgba(61,155,88,0.3)" stroke-width="0.5"/>
+        <text x="348" y="481" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#6FCF97" text-anchor="middle">&lt;10% Moisture</text>
+
+        <line x1="404" y1="464" x2="425" y2="464" stroke="#3D9B58" stroke-width="1.5" marker-end="url(#arr-g)"/>
+
+        <!-- DDGS output -->
+        <rect x="427" y="434" width="120" height="60" rx="8" fill="rgba(20,40,20,0.95)" stroke="#3D9B58" stroke-width="2"/>
+        <text x="487" y="454" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#A4DD88" text-anchor="middle" letter-spacing="1">DDGS OUTPUT</text>
+        <text x="487" y="467" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B880" text-anchor="middle">25-30 TPD</text>
+        <rect x="452" y="473" width="70" height="12" rx="4" fill="rgba(61,155,88,0.25)" stroke="#3D9B58" stroke-width="1"/>
+        <text x="487" y="482" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#6FCF97" text-anchor="middle" font-weight="700">₹25,000/MT</text>
+
+        <!-- CPU -->
+        <rect x="556" y="434" width="130" height="60" rx="8" fill="rgba(8,22,32,0.9)" stroke="#3E9BBC" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="621" y="453" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#7ECFE0" text-anchor="middle" letter-spacing="1">CONDENSATE CPU</text>
+        <text x="621" y="466" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#80B8C8" text-anchor="middle">Anaerobic + Aerobic + RO</text>
+        <rect x="586" y="473" width="70" height="10" rx="3" fill="rgba(62,155,188,0.15)" stroke="rgba(62,155,188,0.35)" stroke-width="0.5"/>
+        <text x="621" y="481" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#7ECFE0" text-anchor="middle">70% water recycled</text>
+
+        <!-- Recycle arrow -->
+        <path d="M 686 464 Q 750 464 750 430 Q 750 200 750 200 Q 750 50 180 50 Q 140 50 83 50 L 83 70"
+              fill="none" stroke="#3E9BBC" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.4" marker-end="url(#arr-b)"/>
+        <text x="800" y="440" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#4080A0" text-anchor="middle">Process water</text>
+        <text x="800" y="452" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#4080A0" text-anchor="middle">recycled to mashing</text>
+
+        <!-- Legend -->
+        <rect x="690" y="425" width="195" height="65" rx="6" fill="rgba(14,14,15,0.7)" stroke="rgba(200,144,26,0.2)" stroke-width="1"/>
+        <text x="700" y="440" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#8A8080" font-weight="700">LEGEND</text>
+        <rect x="700" y="448" width="12" height="8" rx="2" fill="none" stroke="#C8901A" stroke-width="1.5"/>
+        <text x="716" y="456" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8B4AC">Grain/Alcohol Processing</text>
+        <rect x="700" y="462" width="12" height="8" rx="2" fill="none" stroke="#3D9B58" stroke-width="1.5"/>
+        <text x="716" y="470" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8B4AC">Fermentation / ZLD</text>
+        <rect x="700" y="476" width="12" height="8" rx="2" fill="none" stroke="#3E9BBC" stroke-width="1.5"/>
+        <text x="716" y="484" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8B4AC">Distillation / Recycle</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- CO-GENERATION DIAGRAM -->
+  <div id="tab-cogen" class="diagram-panel">
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" width="100%" style="min-width:680px">
+        <defs>
+          <linearGradient id="fire-grad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#8B3A00"/>
+            <stop offset="100%" stop-color="#FF6B35"/>
+          </linearGradient>
+          <linearGradient id="steam-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3E9BBC"/>
+            <stop offset="100%" stop-color="#7ECFE0"/>
+          </linearGradient>
+          <marker id="arr-fire" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#FF6B35"/>
+          </marker>
+          <marker id="arr-steam" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#7ECFE0"/>
+          </marker>
+          <marker id="arr-pwr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#FFD700"/>
+          </marker>
+          <marker id="arr-lp" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#3D9B58"/>
+          </marker>
+        </defs>
+
+        <!-- FUEL INPUTS -->
+        <rect x="10" y="80" width="120" height="55" rx="8" fill="rgba(30,15,8,0.9)" stroke="#FF6B35" stroke-width="1.5"/>
+        <text x="70" y="100" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#FF9B65" text-anchor="middle">RICE HUSK</text>
+        <text x="70" y="114" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#C08060" text-anchor="middle">&gt;85% heat input</text>
+        <text x="70" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#906040" text-anchor="middle">₹3,500–4,500/MT</text>
+
+        <rect x="10" y="155" width="120" height="45" rx="8" fill="rgba(25,25,25,0.8)" stroke="#888" stroke-width="1"/>
+        <text x="70" y="172" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#AAA" text-anchor="middle">COAL BACKUP</text>
+        <text x="70" y="186" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#888" text-anchor="middle">&lt;15% · Emergency only</text>
+
+        <line x1="131" y1="107" x2="175" y2="130" stroke="#FF6B35" stroke-width="1.8" marker-end="url(#arr-fire)"/>
+        <line x1="131" y1="177" x2="175" y2="160" stroke="#888" stroke-width="1.5" marker-end="url(#arr-fire)"/>
+
+        <!-- FBC BOILER -->
+        <rect x="177" y="85" width="140" height="110" rx="10" fill="rgba(35,15,8,0.95)" stroke="#FF6B35" stroke-width="2.5"/>
+        <text x="247" y="112" font-family="'Bebas Neue', sans-serif" font-size="16" fill="#FF9B65" text-anchor="middle" letter-spacing="1">FBC BOILER</text>
+        <text x="247" y="128" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#C08060" text-anchor="middle">25 TPH Steam</text>
+        <rect x="197" y="136" width="100" height="14" rx="4" fill="rgba(255,107,53,0.2)" stroke="rgba(255,107,53,0.5)" stroke-width="1"/>
+        <text x="247" y="147" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#FF9B65" text-anchor="middle">45 kg/cm² · 380°C</text>
+        <text x="247" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#906040" text-anchor="middle">AFBC · Bubbling Bed</text>
+        <text x="247" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#906040" text-anchor="middle">92%+ Combustion eff.</text>
+
+        <!-- Chimney graphic -->
+        <rect x="292" y="40" width="18" height="45" rx="3" fill="#1A1A1A" stroke="#444" stroke-width="1"/>
+        <text x="301" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#666" text-anchor="middle">Stack</text>
+        <text x="301" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#888" text-anchor="middle">Bag filter PM≤50</text>
+
+        <!-- HP STEAM line -->
+        <line x1="318" y1="140" x2="400" y2="140" stroke="#7ECFE0" stroke-width="2.5" marker-end="url(#arr-steam)"/>
+        <text x="358" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#7ECFE0" text-anchor="middle">HP Steam</text>
+        <text x="358" y="122" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#4090A8" text-anchor="middle">45 kg/cm²</text>
+
+        <!-- TURBINE -->
+        <rect x="402" y="95" width="130" height="90" rx="10" fill="rgba(20,20,8,0.95)" stroke="#FFD700" stroke-width="2.5"/>
+        <text x="467" y="120" font-family="'Bebas Neue', sans-serif" font-size="14" fill="#FFD700" text-anchor="middle" letter-spacing="1">TURBINE</text>
+        <text x="467" y="136" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#CCAA00" text-anchor="middle">Back-Pressure · 2.5 MW</text>
+        <rect x="422" y="144" width="90" height="13" rx="4" fill="rgba(255,215,0,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="1"/>
+        <text x="467" y="154" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#FFD700" text-anchor="middle">HP→LP Expansion</text>
+        <text x="467" y="172" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#AA9030" text-anchor="middle">Generator 415V/50Hz</text>
+
+        <!-- POWER OUTPUT arrow up -->
+        <line x1="467" y1="94" x2="467" y2="55" stroke="#FFD700" stroke-width="2" marker-end="url(#arr-pwr)"/>
+        <rect x="382" y="15" width="170" height="40" rx="8" fill="rgba(40,35,5,0.95)" stroke="#FFD700" stroke-width="1.5"/>
+        <text x="467" y="34" font-family="'Bebas Neue', sans-serif" font-size="14" fill="#FFD700" text-anchor="middle" letter-spacing="1">2.5 MW OUTPUT</text>
+        <text x="467" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#CCAA00" text-anchor="middle">Captive · All plant loads · No export</text>
+
+        <!-- LP STEAM down from turbine -->
+        <line x1="467" y1="186" x2="467" y2="230" stroke="#3D9B58" stroke-width="2.5" marker-end="url(#arr-lp)"/>
+        <text x="490" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#3D9B58">LP Exhaust</text>
+        <text x="490" y="221" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#3D9B58">3.5 kg/cm²</text>
+
+        <!-- LP STEAM HEADER -->
+        <rect x="280" y="232" width="374" height="30" rx="8" fill="rgba(12,35,20,0.9)" stroke="#3D9B58" stroke-width="1.8"/>
+        <text x="467" y="252" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#6FCF97" text-anchor="middle" letter-spacing="2">LP STEAM DISTRIBUTION HEADER — 3.5 kg/cm²</text>
+
+        <!-- Steam consumers -->
+        <!-- Distillation -->
+        <line x1="310" y1="263" x2="310" y2="295" stroke="#3D9B58" stroke-width="1.5" marker-end="url(#arr-lp)"/>
+        <rect x="252" y="297" width="116" height="55" rx="7" fill="rgba(8,22,32,0.9)" stroke="#3E9BBC" stroke-width="1.5"/>
+        <text x="310" y="316" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#7ECFE0" text-anchor="middle">DISTILLATION</text>
+        <text x="310" y="329" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#80B8C8" text-anchor="middle">Reboiler duty</text>
+        <text x="310" y="342" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#506878" text-anchor="middle">~6 TPH steam</text>
+
+        <!-- MEE -->
+        <line x1="467" y1="263" x2="467" y2="295" stroke="#3D9B58" stroke-width="1.5" marker-end="url(#arr-lp)"/>
+        <rect x="405" y="297" width="122" height="55" rx="7" fill="rgba(20,15,8,0.9)" stroke="#C8901A" stroke-width="1.5"/>
+        <text x="466" y="316" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#E8A82A" text-anchor="middle">MEE EVAP.</text>
+        <text x="466" y="329" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#B8A870" text-anchor="middle">ZLD evaporation</text>
+        <text x="466" y="342" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#807050" text-anchor="middle">~8 TPH steam</text>
+
+        <!-- DDGS -->
+        <line x1="620" y1="263" x2="620" y2="295" stroke="#3D9B58" stroke-width="1.5" marker-end="url(#arr-lp)"/>
+        <rect x="558" y="297" width="120" height="55" rx="7" fill="rgba(12,24,18,0.9)" stroke="#3D9B58" stroke-width="1.5"/>
+        <text x="618" y="316" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#6FCF97" text-anchor="middle">DDGS DRYER</text>
+        <text x="618" y="329" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#A8D8B8" text-anchor="middle">Drying duty</text>
+        <text x="618" y="342" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#608060" text-anchor="middle">~6 TPH steam</text>
+
+        <!-- MSDH regen -->
+        <line x1="653" y1="263" x2="720" y2="295" stroke="#3D9B58" stroke-width="1.5" marker-end="url(#arr-lp)"/>
+        <rect x="682" y="297" width="125" height="55" rx="7" fill="rgba(20,40,25,0.9)" stroke="#3D9B58" stroke-width="1.5"/>
+        <text x="744" y="316" font-family="'Bebas Neue', sans-serif" font-size="10" fill="#6FCF97" text-anchor="middle">MSDH REGEN</text>
+        <text x="744" y="330" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#A8D8B8" text-anchor="middle">Zeolite reactivation</text>
+        <text x="744" y="343" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#608060" text-anchor="middle">~4 TPH steam</text>
+
+        <!-- Condensate return arrow -->
+        <path d="M 310 353 Q 310 368 467 368 Q 580 368 580 353"
+              fill="none" stroke="#3E9BBC" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.5"/>
+        <text x="467" y="376" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#4080A0" text-anchor="middle">Hot condensate return → Boiler feed water</text>
+
+        <!-- Power consumers box -->
+        <rect x="620" y="60" width="185" height="68" rx="8" fill="rgba(35,30,5,0.8)" stroke="rgba(255,215,0,0.3)" stroke-width="1"/>
+        <text x="712" y="78" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#CCAA00" text-anchor="middle">POWER CONSUMERS</text>
+        <text x="712" y="93" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#AA9030" text-anchor="middle">Mills + Ferment. + Pumps: 1.2 MW</text>
+        <text x="712" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#AA9030" text-anchor="middle">ZLD system (MEE, RO): 0.4 MW</text>
+        <text x="712" y="117" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#AA9030" text-anchor="middle">Utilities + Lighting: 0.2 MW</text>
+        <line x1="553" y1="35" x2="620" y2="70" stroke="#FFD700" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ZLD DIAGRAM -->
+  <div id="tab-zld" class="diagram-panel">
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" width="100%" style="min-width:600px">
+        <defs>
+          <marker id="a-o" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8901A"/></marker>
+          <marker id="a-g2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3D9B58"/></marker>
+          <marker id="a-b2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3E9BBC"/></marker>
+        </defs>
+
+        <text x="380" y="30" font-family="'Bebas Neue', sans-serif" font-size="20" fill="#C8901A" text-anchor="middle" letter-spacing="3">ZERO LIQUID DISCHARGE — MASS FLOW</text>
+
+        <!-- Input: Whole Stillage -->
+        <rect x="10" y="60" width="130" height="70" rx="8" fill="rgba(20,15,8,0.9)" stroke="#C8901A" stroke-width="2"/>
+        <text x="75" y="82" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#E8A82A" text-anchor="middle">WHOLE STILLAGE</text>
+        <text x="75" y="97" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#B8A870" text-anchor="middle">From Analyzer Column</text>
+        <text x="75" y="110" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#907050" text-anchor="middle">~6-7% total solids</text>
+        <rect x="30" y="118" width="90" height="10" rx="3" fill="rgba(200,144,26,0.15)" stroke="rgba(200,144,26,0.3)" stroke-width="0.5"/>
+        <text x="75" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#C8901A" text-anchor="middle">~900 KL/day</text>
+
+        <line x1="141" y1="95" x2="170" y2="95" stroke="#C8901A" stroke-width="2" marker-end="url(#a-o)"/>
+
+        <!-- Decanter Centrifuge -->
+        <rect x="172" y="60" width="125" height="70" rx="8" fill="rgba(20,15,8,0.9)" stroke="#C8901A" stroke-width="1.8"/>
+        <text x="235" y="81" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#E8A82A" text-anchor="middle">DECANTER</text>
+        <text x="235" y="95" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#B8A870" text-anchor="middle">Centrifuge Separation</text>
+        <text x="235" y="108" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#907050" text-anchor="middle">Wet Cake (~35% moist.)</text>
+        <text x="235" y="120" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#907050" text-anchor="middle">+ Thin Stillage (4-5%)</text>
+
+        <!-- Wet cake down -->
+        <line x1="235" y1="131" x2="235" y2="180" stroke="#C8901A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#a-o)"/>
+        <text x="255" y="158" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#907050">Wet cake</text>
+
+        <!-- Thin stillage right -->
+        <line x1="298" y1="95" x2="335" y2="95" stroke="#C8901A" stroke-width="2" marker-end="url(#a-o)"/>
+        <text x="316" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#907050">Thin stillage</text>
+
+        <!-- MEE -->
+        <rect x="337" y="58" width="130" height="74" rx="8" fill="rgba(20,15,8,0.9)" stroke="#C8901A" stroke-width="2"/>
+        <text x="402" y="78" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#E8A82A" text-anchor="middle">5-7 EFFECT MEE</text>
+        <text x="402" y="92" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#B8A870" text-anchor="middle">Multi-Effect Evaporator</text>
+        <rect x="357" y="100" width="90" height="12" rx="4" fill="rgba(200,144,26,0.2)" stroke="rgba(200,144,26,0.4)" stroke-width="1"/>
+        <text x="402" y="110" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#E8A82A" text-anchor="middle">→ Syrup 35-40% solids</text>
+        <text x="402" y="123" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#907050" text-anchor="middle">8-10 TPH evaporation</text>
+
+        <!-- MEE condensate up -->
+        <line x1="402" y1="57" x2="402" y2="20" stroke="#3E9BBC" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a-b2)"/>
+        <text x="420" y="40" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#4080A0">MEE condensate</text>
+        <text x="420" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#4080A0">→ CPU</text>
+
+        <!-- Syrup right from MEE -->
+        <line x1="468" y1="95" x2="505" y2="95" stroke="#C8901A" stroke-width="2" marker-end="url(#a-o)"/>
+        <text x="486" y="87" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#907050">Syrup</text>
+
+        <!-- DDGS DRYER -->
+        <rect x="507" y="58" width="125" height="74" rx="8" fill="rgba(12,24,18,0.9)" stroke="#3D9B58" stroke-width="2"/>
+        <text x="570" y="78" font-family="'Bebas Neue', sans-serif" font-size="13" fill="#6FCF97" text-anchor="middle">DDGS DRYER</text>
+        <text x="570" y="92" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#A8D8B8" text-anchor="middle">Steam Tube Bundle</text>
+        <text x="570" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B890" text-anchor="middle">Wet Cake + Syrup blended</text>
+        <rect x="535" y="113" width="70" height="12" rx="4" fill="rgba(61,155,88,0.25)" stroke="#3D9B58" stroke-width="1"/>
+        <text x="570" y="123" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#6FCF97" text-anchor="middle" font-weight="700">&lt;10% final moisture</text>
+
+        <!-- Wet cake line from decanter to DDGS dryer -->
+        <path d="M 235 180 Q 235 200 402 200 Q 540 200 570 133" fill="none" stroke="#C8901A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#a-o)"/>
+
+        <!-- DDGS output right -->
+        <line x1="633" y1="95" x2="680" y2="95" stroke="#3D9B58" stroke-width="2" marker-end="url(#a-g2)"/>
+        <rect x="682" y="60" width="68" height="74" rx="8" fill="rgba(20,40,20,0.95)" stroke="#3D9B58" stroke-width="2"/>
+        <text x="716" y="82" font-family="'Bebas Neue', sans-serif" font-size="11" fill="#A4DD88" text-anchor="middle">DDGS</text>
+        <text x="716" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B880" text-anchor="middle">25-30 TPD</text>
+        <rect x="696" y="103" width="40" height="22" rx="4" fill="rgba(61,155,88,0.25)" stroke="#3D9B58" stroke-width="1"/>
+        <text x="716" y="113" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#6FCF97" text-anchor="middle" font-weight="700">₹25K</text>
+        <text x="716" y="124" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#6FCF97" text-anchor="middle">/MT</text>
+
+        <!-- CPU section -->
+        <text x="380" y="230" font-family="'Bebas Neue', sans-serif" font-size="16" fill="#3E9BBC" text-anchor="middle" letter-spacing="3">CONDENSATE POLISHING UNIT (CPU)</text>
+
+        <!-- Anaerobic -->
+        <rect x="30" y="250" width="140" height="70" rx="8" fill="rgba(8,20,30,0.9)" stroke="#3E9BBC" stroke-width="1.8"/>
+        <text x="100" y="270" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#7ECFE0" text-anchor="middle">ANAEROBIC</text>
+        <text x="100" y="285" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B8C8" text-anchor="middle">UASB Reactor</text>
+        <text x="100" y="297" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#506878" text-anchor="middle">COD: 30,000 → 3,000 mg/L</text>
+        <rect x="58" y="304" width="84" height="11" rx="3" fill="rgba(62,155,188,0.15)" stroke="rgba(62,155,188,0.3)" stroke-width="0.5"/>
+        <text x="100" y="312" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#7ECFE0" text-anchor="middle">Biogas generated</text>
+
+        <line x1="171" y1="285" x2="208" y2="285" stroke="#3E9BBC" stroke-width="1.8" marker-end="url(#a-b2)"/>
+
+        <!-- Aerobic -->
+        <rect x="210" y="250" width="130" height="70" rx="8" fill="rgba(8,20,30,0.9)" stroke="#3E9BBC" stroke-width="1.5"/>
+        <text x="275" y="270" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#7ECFE0" text-anchor="middle">AEROBIC + MBR</text>
+        <text x="275" y="284" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B8C8" text-anchor="middle">Extended Aeration</text>
+        <text x="275" y="297" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#506878" text-anchor="middle">COD: 3,000 → 250 mg/L</text>
+
+        <line x1="341" y1="285" x2="378" y2="285" stroke="#3E9BBC" stroke-width="1.8" marker-end="url(#a-b2)"/>
+
+        <!-- RO -->
+        <rect x="380" y="250" width="120" height="70" rx="8" fill="rgba(8,20,30,0.9)" stroke="#3E9BBC" stroke-width="2"/>
+        <text x="440" y="268" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#AEE8F8" text-anchor="middle">REVERSE OSMOSIS</text>
+        <text x="440" y="282" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#80B8C8" text-anchor="middle">2-pass RO membrane</text>
+        <text x="440" y="295" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#506878" text-anchor="middle">Permeate: clean water</text>
+        <text x="440" y="308" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#506878" text-anchor="middle">Reject → MEE inlet</text>
+
+        <!-- Permeate to process -->
+        <line x1="501" y1="285" x2="558" y2="285" stroke="#3D9B58" stroke-width="1.8" marker-end="url(#a-g2)"/>
+        <rect x="560" y="250" width="140" height="70" rx="8" fill="rgba(12,35,20,0.9)" stroke="#3D9B58" stroke-width="2"/>
+        <text x="630" y="270" font-family="'Bebas Neue', sans-serif" font-size="12" fill="#6FCF97" text-anchor="middle">PROCESS REUSE</text>
+        <text x="630" y="285" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#A8D8B8" text-anchor="middle">70% water recycled</text>
+        <text x="630" y="298" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" fill="#A8D8B8" text-anchor="middle">→ Mashing + Cooling</text>
+        <rect x="590" y="306" width="80" height="12" rx="4" fill="rgba(61,155,88,0.25)" stroke="#3D9B58" stroke-width="1"/>
+        <text x="630" y="316" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#6FCF97" text-anchor="middle" font-weight="700">200-250 KLD saved</text>
+
+        <!-- Input to anaerobic from MEE condensate and spent lees -->
+        <line x1="100" y1="250" x2="100" y2="225" stroke="#3E9BBC" stroke-width="1.2" stroke-dasharray="4,3"/>
+        <text x="126" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#406080">Spent lees from distillation</text>
+        <text x="126" y="252" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#406080">+ MEE condensate → CPU inlet</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- STEPS GRID -->
+  <div class="steps-grid" style="margin-top: 50px;">
+    <div class="step-card reveal">
+      <div class="step-num">1</div>
+      <div class="step-icon">🌾</div>
+      <div class="step-title">Grain Milling</div>
+      <div class="step-detail">10,000 MT silos (30-45 day buffer). NIR moisture/starch testing on every lot. 2×15 TPH Hammer Mills to &lt;1mm flour.</div>
+      <span class="step-param">Throughput: ~154 MT/day</span>
+    </div>
+    <div class="step-card reveal reveal-delay-1">
+      <div class="step-num">2</div>
+      <div class="step-icon">🔥</div>
+      <div class="step-title">Liquefaction</div>
+      <div class="step-detail">Slurry mixed with recycle water + α-amylase. Jet Cooked at 105-110°C for full starch gelatinization.</div>
+      <span class="step-param">Temp: 105-110°C · 3-5 min</span>
+    </div>
+    <div class="step-card reveal reveal-delay-2">
+      <div class="step-num">3</div>
+      <div class="step-icon">🧫</div>
+      <div class="step-title">SSF Fermentation</div>
+      <div class="step-detail">Glucoamylase saccharification → Saccharomyces cerevisiae yeast fermentation. Simultaneous process over 48-52 hours.</div>
+      <span class="step-param">8-10% v/v wash · 2×500 KL</span>
+    </div>
+    <div class="step-card reveal reveal-delay-3">
+      <div class="step-num">4</div>
+      <div class="step-icon">🏛️</div>
+      <div class="step-title">Distillation</div>
+      <div class="step-detail">Multipressure system: Analyzer → Degassing → Rectifier columns. Produces Rectified Spirit at 95% v/v.</div>
+      <span class="step-param">RS: 95% v/v output</span>
+    </div>
+    <div class="step-card reveal reveal-delay-4">
+      <div class="step-num">5</div>
+      <div class="step-icon">🔬</div>
+      <div class="step-title">Dehydration</div>
+      <div class="step-detail">Molecular Sieve (MSDH/PSA). Twin Zeolite beds alternating adsorption-regeneration cycle to remove residual water.</div>
+      <span class="step-param">99.8% v/v — Fuel Grade</span>
+    </div>
+    <div class="step-card reveal reveal-delay-1">
+      <div class="step-num">6</div>
+      <div class="step-icon">♻️</div>
+      <div class="step-title">ZLD + DDGS</div>
+      <div class="step-detail">Decanter → MEE (5-7 effect) → DDGS Steam Dryer. CPU: UASB + Aerobic + RO. 70% process water recycled.</div>
+      <span class="step-param">Zero liquid discharge</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEEDSTOCK ──────────────────────────────── -->
+<section id="feedstock" class="feedstock-section">
+  <div class="section-label">Multi-Feedstock Design</div>
+  <h2 class="section-title">Raw Material <br>Strategy</h2>
+  <p class="section-sub">Switch between four feedstocks by season to maximise margins and allocation.</p>
+
+  <div class="feedstock-grid">
+    <div class="feedstock-card primary reveal">
+      <div class="feedstock-emoji">🌽</div>
+      <div class="feedstock-name">Maize</div>
+      <div class="feedstock-source">Bellary, Raichur, Kurnool, Anantapur catchment</div>
+      <div class="feedstock-stats">
+        <div class="fstat"><span class="fstat-label">OMC Price</span><span class="fstat-val">₹71.86/L</span></div>
+        <div class="fstat"><span class="fstat-label">Ethanol Yield</span><span class="fstat-val">380-400 L/MT</span></div>
+        <div class="fstat"><span class="fstat-label">Starch Content</span><span class="fstat-val">62-68%</span></div>
+        <div class="fstat"><span class="fstat-label">Grain Cost (peak season)</span><span class="fstat-val">₹17-18.5/kg</span></div>
+        <div class="fstat"><span class="fstat-label">Feed Cost/L</span><span class="fstat-val">~₹47.43</span></div>
+        <div class="fstat"><span class="fstat-label">Gross Margin/L</span><span class="fstat-val">~₹24+</span></div>
+        <div class="fstat"><span class="fstat-label">ESY 2025-26 Allocation Share</span><span class="fstat-val">45.68%</span></div>
+      </div>
+    </div>
+    <div class="feedstock-card reveal reveal-delay-1">
+      <div class="feedstock-emoji">🍚</div>
+      <div class="feedstock-name">Broken Rice</div>
+      <div class="feedstock-source">300+ mills in Tungabhadra belt within 100 km</div>
+      <div class="feedstock-stats">
+        <div class="fstat"><span class="fstat-label">OMC Price</span><span class="fstat-val">₹60.32/L</span></div>
+        <div class="fstat"><span class="fstat-label">Ethanol Yield</span><span class="fstat-val">450-460 L/MT</span></div>
+        <div class="fstat"><span class="fstat-label">Starch Content</span><span class="fstat-val">70-75%</span></div>
+        <div class="fstat"><span class="fstat-label">Market Price</span><span class="fstat-val">₹22-26/kg</span></div>
+        <div class="fstat"><span class="fstat-label">Gross Margin/L</span><span class="fstat-val">~₹8-10</span></div>
+        <div class="fstat"><span class="fstat-label">Availability</span><span class="fstat-val">Year-round</span></div>
+      </div>
+    </div>
+    <div class="feedstock-card reveal reveal-delay-2">
+      <div class="feedstock-emoji">🏛️</div>
+      <div class="feedstock-name">FCI Rice</div>
+      <div class="feedstock-source">FCI e-auctions · 10% broken content procurement</div>
+      <div class="feedstock-stats">
+        <div class="fstat"><span class="fstat-label">OMC Price</span><span class="fstat-val">₹60.32/L</span></div>
+        <div class="fstat"><span class="fstat-label">Ethanol Yield</span><span class="fstat-val">420-440 L/MT</span></div>
+        <div class="fstat"><span class="fstat-label">Starch Content</span><span class="fstat-val">68-72%</span></div>
+        <div class="fstat"><span class="fstat-label">Supply Mode</span><span class="fstat-val">FCI Auction</span></div>
+        <div class="fstat"><span class="fstat-label">Price Floor</span><span class="fstat-val">Stable</span></div>
+        <div class="fstat"><span class="fstat-label">Risk</span><span class="fstat-val">FCI policy dep.</span></div>
+      </div>
+    </div>
+    <div class="feedstock-card reveal reveal-delay-3">
+      <div class="feedstock-emoji">🌾</div>
+      <div class="feedstock-name">Damaged Grains</div>
+      <div class="feedstock-source">Bellary, Raichur APMC spot auctions</div>
+      <div class="feedstock-stats">
+        <div class="fstat"><span class="fstat-label">OMC Price</span><span class="fstat-val">₹64.00/L</span></div>
+        <div class="fstat"><span class="fstat-label">Ethanol Yield</span><span class="fstat-val">350-390 L/MT</span></div>
+        <div class="fstat"><span class="fstat-label">Grain Cost</span><span class="fstat-val">₹14-16/kg</span></div>
+        <div class="fstat"><span class="fstat-label">Feed Cost/L</span><span class="fstat-val">~₹40-44</span></div>
+        <div class="fstat"><span class="fstat-label">Gross Margin/L</span><span class="fstat-val">~₹20-24</span></div>
+        <div class="fstat"><span class="fstat-label">Availability</span><span class="fstat-val">Spot/Seasonal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCTS ──────────────────────────────── -->
+<section id="products" class="products-section">
+  <div class="section-label">Revenue Streams</div>
+  <h2 class="section-title">Products &amp; <br>By-Products</h2>
+
+  <div class="product-cards">
+    <div class="product-card main reveal">
+      <div class="product-icon">⛽</div>
+      <div class="product-name">Anhydrous Fuel Ethanol</div>
+      <div class="product-purity">IS 15464 · EN 15376 · 99.8% v/v minimum</div>
+      <div class="spec-list">
+        <div class="spec-row"><span class="spec-key">Annual Production</span><span class="spec-val">~1.98 Crore Litres</span></div>
+        <div class="spec-row"><span class="spec-key">Water Content</span><span class="spec-val">≤ 0.2% (2,000 ppm)</span></div>
+        <div class="spec-row"><span class="spec-key">Methanol Content</span><span class="spec-val">≤ 0.5% v/v</span></div>
+        <div class="spec-row"><span class="spec-key">Storage (on-site)</span><span class="spec-val">≥ 3,000 KL SS tanks</span></div>
+        <div class="spec-row"><span class="spec-key">Dispatch</span><span class="spec-val">SS tankers → Guntakal TPC</span></div>
+      </div>
+      <div class="product-revenue">₹142 Cr</div>
+      <div class="product-revenue-label">Estimated Year-1 Revenue (Maize basis)</div>
+    </div>
+
+    <div class="product-card secondary reveal reveal-delay-1">
+      <div class="product-icon">🐄</div>
+      <div class="product-name">DDGS</div>
+      <div class="product-purity">Distillers Dried Grains with Solubles</div>
+      <div class="spec-list">
+        <div class="spec-row"><span class="spec-key">Annual Volume</span><span class="spec-val">~8,000-9,000 MT</span></div>
+        <div class="spec-row"><span class="spec-key">Crude Protein</span><span class="spec-val">28-32% (DB)</span></div>
+        <div class="spec-row"><span class="spec-key">Moisture</span><span class="spec-val">≤ 10%</span></div>
+        <div class="spec-row"><span class="spec-key">Market Price</span><span class="spec-val">₹25,000/MT</span></div>
+      </div>
+      <div class="product-revenue">₹20 Cr</div>
+      <div class="product-revenue-label">Year-1 By-product Revenue</div>
+    </div>
+
+    <div class="product-card secondary reveal reveal-delay-2">
+      <div class="product-icon">💨</div>
+      <div class="product-name">CO₂</div>
+      <div class="product-purity">Food-grade Recovered CO₂ — Phase 2 Upside</div>
+      <div class="spec-list">
+        <div class="spec-row"><span class="spec-key">Generation</span><span class="spec-val">~45 TPD theoretical</span></div>
+        <div class="spec-row"><span class="spec-key">Recoverable</span><span class="spec-val">~20-25 TPD</span></div>
+        <div class="spec-row"><span class="spec-key">Market Price</span><span class="spec-val">₹8-12K/MT</span></div>
+        <div class="spec-row"><span class="spec-key">Capex (addon)</span><span class="spec-val">~₹3-4 Cr</span></div>
+      </div>
+      <div class="product-revenue">₹6-10 Cr</div>
+      <div class="product-revenue-label">Potential Phase-2 Revenue</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINANCIALS ────────────────────────────── -->
+<section id="financials" class="financials-section">
+  <div class="section-label">Investment Analysis · March 2026</div>
+  <h2 class="section-title">Financial <br>Performance</h2>
+  <p class="section-sub">Revised for ESY 2025-26 pricing. DFPD subvention reduces effective debt cost to 3.5%.</p>
+
+  <div class="financials-grid">
+    <!-- P&L -->
+    <div class="chart-card reveal">
+      <div class="chart-title">Year-1 Projected</div>
+      <div class="chart-subtitle">Profit & Loss Statement</div>
+      <table class="pnl-table">
+        <tr>
+          <td class="label-col">Ethanol Revenue (Maize @ ₹71.86/L)</td>
+          <td class="val-col">₹142.28 Cr</td>
+        </tr>
+        <tr>
+          <td class="label-col">DDGS Revenue (8,000 MT @ ₹25K/MT)</td>
+          <td class="val-col">₹20.00 Cr</td>
+        </tr>
+        <tr class="pnl-highlight">
+          <td class="label-col">Total Revenue</td>
+          <td class="val-col">₹162.28 Cr</td>
+        </tr>
+        <tr>
+          <td class="label-col">Total Operating Expenses</td>
+          <td class="val-col">₹115.00 Cr</td>
+        </tr>
+        <tr class="pnl-highlight">
+          <td class="label-col">EBITDA (29% margin)</td>
+          <td class="val-col">₹47.28 Cr</td>
+        </tr>
+        <tr>
+          <td class="label-col">Interest (net of 6% DFPD subvention)</td>
+          <td class="val-col">₹3.55 Cr</td>
+        </tr>
+        <tr>
+          <td class="label-col">Depreciation</td>
+          <td class="val-col">₹10.00 Cr</td>
+        </tr>
+        <tr>
+          <td class="label-col">PBT</td>
+          <td class="val-col">₹33.73 Cr</td>
+        </tr>
+        <tr>
+          <td class="label-col">Tax @ 25%</td>
+          <td class="val-col">₹8.43 Cr</td>
+        </tr>
+        <tr class="pnl-highlight">
+          <td class="label-col">Net Profit (PAT)</td>
+          <td class="val-col">₹25.30 Cr</td>
+        </tr>
+      </table>
+      <div class="kpi-grid" style="margin-top:24px;">
+        <div class="kpi-box">
+          <div class="kpi-val">23.5%</div>
+          <div class="kpi-label">Post-Tax IRR</div>
         </div>
-    </footer>
+        <div class="kpi-box">
+          <div class="kpi-val">4.5 Yr</div>
+          <div class="kpi-label">Payback Period</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-val">2.2×</div>
+          <div class="kpi-label">Average DSCR</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-val">29%</div>
+          <div class="kpi-label">EBITDA Margin</div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Chart Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Chart 1: Project Cost Breakdown
-            const ctxCost = document.getElementById('costChart').getContext('2d');
-            new Chart(ctxCost, {
-                type: 'bar',
-                data: {
-                    labels: ['Land & Dev', 'Civil', 'Plant & Mach', 'Utilities', 'Electrical', 'Pre-Op/Cont'],
-                    datasets: [{
-                        label: 'Cost (₹ Crores)',
-                        data: [12, 28, 68, 15, 8, 14], // 6+3+5 grouped in last
-                        backgroundColor: [
-                            '#81C784', '#66BB6A', '#2E7D32', '#43A047', '#1B5E20', '#A5D6A7'
-                        ],
-                        borderRadius: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: { display: false }
-                        },
-                        x: {
-                            grid: { display: false }
-                        }
-                    }
-                }
-            });
+    <!-- Charts -->
+    <div class="reveal reveal-delay-1">
+      <div class="chart-card" style="margin-bottom:24px;">
+        <div class="chart-title">Project Cost Breakdown</div>
+        <div class="chart-subtitle">₹145 Crores Total</div>
+        <canvas id="costChart" height="180"></canvas>
+      </div>
 
-            // Chart 2: Means of Finance
-            const ctxFinance = document.getElementById('financeChart').getContext('2d');
-            new Chart(ctxFinance, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Debt (Banks)', 'Equity (Promoters)'],
-                    datasets: [{
-                        data: [101.5, 43.5],
-                        backgroundColor: ['#2E7D32', '#FFD700'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-        });
-    </script>
+      <div class="chart-card">
+        <div class="chart-title">Means of Finance</div>
+        <div class="chart-subtitle">Debt + Equity Structure</div>
+        <div style="display:flex; gap:20px; align-items:center;">
+          <canvas id="financeChart" width="160" height="160" style="flex-shrink:0;"></canvas>
+          <div>
+            <div class="debt-pill" style="margin-bottom:12px; min-width:auto;">
+              <div class="debt-pill-val" style="font-size:1.4rem; color:#C8901A;">₹101.5 Cr</div>
+              <div class="debt-pill-label">Term Loan (70%)</div>
+            </div>
+            <div class="debt-pill" style="min-width:auto;">
+              <div class="debt-pill-val" style="font-size:1.4rem; color:#3D9B58;">₹43.5 Cr</div>
+              <div class="debt-pill-label">Equity (30%)</div>
+            </div>
+            <div style="margin-top:16px; padding:12px 14px; background:rgba(200,144,26,0.08); border:1px solid rgba(200,144,26,0.25); border-radius:8px;">
+              <div style="font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">DFPD Subvention Impact</div>
+              <div style="font-size:0.85rem; color:var(--gold-light); font-weight:700;">9.5% → 3.5% effective</div>
+              <div style="font-size:0.75rem; color:var(--muted);">~₹30 Cr saved over 5 years</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── POLICY STRIP ──────────────────────────── -->
+<div class="policy-strip">
+  <div>
+    <div class="policy-strip-title">E20 Sustained. E27 on the Horizon.</div>
+    <div class="policy-strip-sub">As of February 2026, India has maintained 20% ethanol blending for four consecutive months. ISMA formally requested the PMO to fast-track E22→E25→E27 in March 2026. BIS developing E27 standards. For a plant commissioning in 2028, this is a direct demand tailwind — additional 350-400 Cr L/year of ethanol demand at E27.</div>
+    <div class="policy-benefits">
+      <div class="policy-benefit-pill">DFPD 6% Subvention</div>
+      <div class="policy-benefit-pill">100% SGST Reimbursement</div>
+      <div class="policy-benefit-pill">Zero Liquid Discharge</div>
+      <div class="policy-benefit-pill">OMC Guaranteed Offtake</div>
+      <div class="policy-benefit-pill">Deficit Zone Advantage</div>
+    </div>
+  </div>
+  <a href="#contact" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">Request DPR</a>
+</div>
+
+<!-- ─── CONTACT ───────────────────────────────── -->
+<section id="contact" class="contact-section">
+  <div class="section-label">Get Involved</div>
+  <h2 class="section-title">Partner with <br>Ark Bioenergies</h2>
+
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-info-title">Let's Build India's Energy Future</div>
+      <div class="contact-info-sub">We are seeking investment partners, feedstock suppliers, DDGS off-takers, and technology/EPC partners for the 60 KLPD Bellary project.</div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📧</div>
+        <span>arjun@arkbioenergies.in</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <span>Bellary District, Karnataka (Plant Site)<br>Bengaluru — Corporate Office</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🏭</div>
+        <span>60 KLPD | 2.5 MW Co-Gen | ZLD | ₹145 Cr Project</span>
+      </div>
+
+      <div style="margin-top: 30px; font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">I'm interested in...</div>
+      <div class="interest-btns">
+        <button class="interest-btn active" onclick="selectInterest(this)">Investment</button>
+        <button class="interest-btn" onclick="selectInterest(this)">Feedstock Supply</button>
+        <button class="interest-btn" onclick="selectInterest(this)">DDGS Off-take</button>
+        <button class="interest-btn" onclick="selectInterest(this)">EPC / Technology</button>
+        <button class="interest-btn" onclick="selectInterest(this)">Banking / Finance</button>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="you@company.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Organisation</label>
+        <input type="text" class="form-input" placeholder="Company / Institution Name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-input" rows="4" placeholder="Tell us how you'd like to partner..." style="resize:vertical;"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm(this)">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────── -->
+<footer>
+  <div class="footer-logo">ARK <em>BIOENERGIES</em></div>
+  <div class="footer-copy">© 2026 Ark Bioenergies Pvt Ltd. All rights reserved. | DPR dated March 24, 2026</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Disclaimer</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+// ─── CHARTS ──────────────────────────────────
+Chart.defaults.color = '#8C8C94';
+Chart.defaults.font.family = 'Plus Jakarta Sans';
+
+const costCtx = document.getElementById('costChart').getContext('2d');
+new Chart(costCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Land & Dev', 'Civil Works', 'Plant & Mach.', 'Utilities+ZLD', 'Electrical', 'Pre-Op+Cont.'],
+    datasets: [{
+      data: [12, 28, 68, 15, 8, 14],
+      backgroundColor: ['#C8901A','#E8A82A','#8B6210','#D4A030','#A07020','#F0C060'],
+      borderRadius: 6,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false }, tooltip: {
+      callbacks: { label: (ctx) => `  ₹${ctx.parsed.y} Crores` }
+    }},
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(200,144,26,0.08)' },
+        ticks: { callback: v => '₹' + v + 'Cr' }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+const finCtx = document.getElementById('financeChart').getContext('2d');
+new Chart(finCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Term Loan (70%)', 'Equity (30%)'],
+    datasets: [{
+      data: [101.5, 43.5],
+      backgroundColor: ['#C8901A', '#2A6B3C'],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    cutout: '72%',
+    plugins: { legend: { display: false } }
+  }
+});
+
+// ─── SCROLL ANIMATION ─────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── COUNTER ANIMATION ───────────────────────
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.to);
+    let current = 0;
+    const duration = 1800;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current);
+      if (current >= target) clearInterval(timer);
+    }, 16);
+    counterObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count').forEach(el => counterObs.observe(el));
+
+// ─── PROCESS TABS ─────────────────────────────
+function switchTab(id) {
+  document.querySelectorAll('.diagram-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.process-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ─── INTEREST BUTTONS ─────────────────────────
+function selectInterest(btn) {
+  document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ─── FORM SUBMIT ──────────────────────────────
+function submitForm(btn) {
+  const original = btn.textContent;
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = '#2A6B3C';
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.style.background = '';
+  }, 3000);
+}
+</script>
 </body>
 </html>
